@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-09-24T08:43:39.722044+00:00",
+  "epics": [
+    {
+      "epic_id": "",
+      "epic_link": "",
+      "epic_title": "",
+      "status": "In Progress",
+      "progress_pct": 0,
+      "summary": {
+        "runs_completed": 0,
+        "runs_total": 1,
+        "total_tokens": "60.4k",
+        "agent_success_pct": "100%",
+        "open_blockers": 0,
+        "unit_tests": 0,
+        "unit_test_tokens": "0"
+      },
+      "tickets": [
+        {
+          "ticket_id": "MG-365",
+          "ticket_link": "https://redhat.atlassian.net/browse/MG-365",
+          "ticket_summary": "gather jobs",
+          "agent_label": "MG-365-direct-opus-metrics-report",
+          "status": "Archived",
+          "health": {
+            "total_tokens": "60.4k",
+            "run_cost": "$0.37",
+            "wall_time": "66m 0s",
+            "eval_rejections": 0,
+            "agent_success_pct": "100%",
+            "tasks_passed": 3,
+            "tasks_total": 3
+          },
+          "phases": [
+            {
+              "phase_name": "1. Spec Understanding",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "4m 48s",
+              "tokens_in_out": "3.0k / 5.3k",
+              "quality": "Score: 85/100 — approved"
+            },
+            {
+              "phase_name": "2. Repo Assessment",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "2m 9s",
+              "tokens_in_out": "5.1k / 2.9k",
+              "quality": "Score: 88/100 — approved"
+            },
+            {
+              "phase_name": "3. Architectural Planning",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "1m 17s",
+              "tokens_in_out": "8.0k / 2.3k",
+              "quality": "Score: 90/100 — approved"
+            },
+            {
+              "phase_name": "4. Sub-Tasks Creation (DAG)",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "5m 7s",
+              "tokens_in_out": "14.9k / 4.6k",
+              "quality": "Approved"
+            },
+            {
+              "phase_name": "5. Code Generation / Harness",
+              "status": "RUNNING",
+              "iterations": "1 Iteration",
+              "time_taken": "42m 23s",
+              "tokens_in_out": "13.5k / 790",
+              "quality": "Task_T1_1_passed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

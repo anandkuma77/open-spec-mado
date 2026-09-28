@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-09-24T08:43:39.826338+00:00",
+  "epics": [
+    {
+      "epic_id": "SMC-61",
+      "epic_link": "https://redhat.atlassian.net/browse/SMC-61",
+      "epic_title": "Add a \"Related Resources\" section to the inspect page",
+      "has_epic": false,
+      "summary": {
+        "tickets_count": 1,
+        "ac_coverage_pct": 0,
+        "automation_pct": 63.6,
+        "first_pass_pct": 9.1,
+        "bugs_found": 0,
+        "bugs_verified": 0,
+        "total_tokens": "0",
+        "total_cost": "$0.00"
+      },
+      "tickets": [
+        {
+          "ticket_id": "SMC-61",
+          "ticket_link": "https://redhat.atlassian.net/browse/SMC-61",
+          "ticket_name": "Add a \"Related Resources\" section to the inspect page",
+          "change_name": "smc-inspect-graph",
+          "pr_url": "https://github.com/openshift/ocp-secrets-management-console/pull/124",
+          "phase": null,
+          "mode": "phase-iterative",
+          "ac_scenario_coverage": {
+            "total": 0,
+            "covered": 0,
+            "pct": null,
+            "uncovered": []
+          },
+          "automation_coverage": {
+            "total": 11,
+            "automated": 7,
+            "manual": 4,
+            "pct": 63.6
+          },
+          "first_pass_rate": {
+            "executed": 11,
+            "passed": 1,
+            "failed": 10,
+            "pct": 9.1,
+            "source": "local_manual"
+          },
+          "flake_rate": {
+            "retries": null,
+            "retries_passed": null,
+            "pct": null
+          },
+          "bugs": {
+            "found": 0,
+            "verified": 0,
+            "details": []
+          },
+          "triage_accuracy": {
+            "total": 0,
+            "correct": 0,
+            "pct": null,
+            "reason": "no_triage_data"
+          },
+          "cost": {
+            "tokens_in": 0,
+            "tokens_out": 0,
+            "tokens_total": 0,
+            "tokens_total_fmt": "0",
+            "estimated_cost_usd": "$0.00",
+            "wall_time": "< 1s",
+            "per_stage": []
+          }
+        }
+      ]
+    }
+  ]
+}

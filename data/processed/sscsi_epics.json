@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-09-24T08:43:39.967865+00:00",
+  "epics": [
+    {
+      "epic_id": "SSCSI-264",
+      "epic_link": "https://issues.redhat.com/browse/SSCSI-264",
+      "epic_title": "SSCSI: Centralized & enforced TLS configuration",
+      "status": "In Progress",
+      "progress_pct": 0,
+      "summary": {
+        "runs_completed": 0,
+        "runs_total": 1,
+        "total_tokens": "110.4k",
+        "agent_success_pct": "100%",
+        "open_blockers": 0,
+        "unit_tests": 0,
+        "unit_test_tokens": "0"
+      },
+      "tickets": [
+        {
+          "ticket_id": "SSCSI-264",
+          "ticket_link": "https://issues.redhat.com/browse/SSCSI-264",
+          "ticket_summary": "SSCSI: Centralized & enforced TLS configuration",
+          "agent_label": "SSCSI-264",
+          "status": "Archived",
+          "health": {
+            "total_tokens": "110.4k",
+            "run_cost": "$0.79",
+            "wall_time": "6680m 53s",
+            "eval_rejections": 0,
+            "agent_success_pct": "100%",
+            "tasks_passed": 4,
+            "tasks_total": 4
+          },
+          "phases": [
+            {
+              "phase_name": "1. Spec Understanding",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "2m 43s",
+              "tokens_in_out": "1.8k / 3.4k",
+              "quality": "Approved_skip_gate"
+            },
+            {
+              "phase_name": "2. Repo Assessment",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "7m 8s",
+              "tokens_in_out": "11.9k / 8.3k",
+              "quality": "Approved_no_eval_file"
+            },
+            {
+              "phase_name": "3. Architectural Planning",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "6m 31s",
+              "tokens_in_out": "11.9k / 6.8k",
+              "quality": "No-rubric-available"
+            },
+            {
+              "phase_name": "4. Sub-Tasks Creation (DAG)",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "4370m 10s",
+              "tokens_in_out": "21.2k / 10.7k",
+              "quality": "Structural-pass-no-rubric"
+            },
+            {
+              "phase_name": "5. Code Generation / Harness",
+              "status": "PASSED",
+              "iterations": "1 Iteration",
+              "time_taken": "2294m 21s",
+              "tokens_in_out": "25.4k / 9.0k",
+              "quality": "Plan_phase_1_complete"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-09-24T08:43:40.069645+00:00",
+  "epics": [
+    {
+      "epic_id": "SPIRE-617",
+      "epic_link": "https://redhat.atlassian.net/browse/SPIRE-617",
+      "epic_title": "SPIRE-617",
+      "has_epic": false,
+      "summary": {
+        "tickets_count": 1,
+        "ac_coverage_pct": 33.3,
+        "automation_pct": 33.3,
+        "first_pass_pct": 0.0,
+        "bugs_found": 0,
+        "bugs_verified": 0,
+        "total_tokens": "29.1k",
+        "total_cost": "$0.23"
+      },
+      "tickets": [
+        {
+          "ticket_id": "SPIRE-617",
+          "ticket_link": "https://redhat.atlassian.net/browse/SPIRE-617",
+          "ticket_name": "SPIRE-617",
+          "change_name": "spire-617",
+          "pr_url": "https://github.com/openshift/zero-trust-workload-identity-manager/pull/149",
+          "phase": 1,
+          "mode": "phase-iterative",
+          "ac_scenario_coverage": {
+            "total": 12,
+            "covered": 4,
+            "pct": 33.3,
+            "uncovered": [
+              "FR-001",
+              "FR-002",
+              "FR-003",
+              "FR-004",
+              "FR-005",
+              "US-001",
+              "US-003",
+              "SC-004"
+            ]
+          },
+          "automation_coverage": {
+            "total": 3,
+            "automated": 1,
+            "manual": 2,
+            "pct": 33.3
+          },
+          "first_pass_rate": {
+            "executed": 3,
+            "passed": 0,
+            "failed": 0,
+            "pct": 0.0,
+            "source": "local"
+          },
+          "flake_rate": {
+            "retries": 0,
+            "retries_passed": 0,
+            "pct": 0.0
+          },
+          "bugs": {
+            "found": 0,
+            "verified": 0,
+            "details": []
+          },
+          "triage_accuracy": {
+            "total": 0,
+            "correct": 0,
+            "pct": null,
+            "reason": "no_triage_data"
+          },
+          "cost": {
+            "tokens_in": 17000,
+            "tokens_out": 12100,
+            "tokens_total": 29100,
+            "tokens_total_fmt": "29.1k",
+            "estimated_cost_usd": "$0.23",
+            "wall_time": "3m 21s",
+            "per_stage": [
+              {
+                "stage": "pre_analysis",
+                "tokens_in": 3500,
+                "tokens_out": 2800,
+                "duration": "2m 0s"
+              },
+              {
+                "stage": "test_plan",
+                "tokens_in": 4200,
+                "tokens_out": 3800,
+                "duration": "3m 0s"
+              },
+              {
+                "stage": "consolidation",
+                "tokens_in": 3800,
+                "tokens_out": 1200,
+                "duration": "1m 0s"
+              },
+              {
+                "stage": "code_generation",
+                "tokens_in": 5000,
+                "tokens_out": 3500,
+                "duration": "2m 0s"
+              },
+              {
+                "stage": "execution",
+                "tokens_in": 500,
+                "tokens_out": 800,
+                "duration": "0m 30s"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
