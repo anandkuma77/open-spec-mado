@@ -1,0 +1,92 @@
+{
+    "exported_at": "2026-08-05T12:10:45.467456+00:00",
+    "change_name": "spire-617",
+    "jira_task_link": "https://redhat.atlassian.net/browse/SPIRE-617",
+    "jira_task_name": "SPIRE-617",
+    "pr_url": "https://github.com/openshift/zero-trust-workload-identity-manager/pull/149",
+    "phase": 1,
+    "mode": "phase-iterative",
+    "ac_scenario_coverage": {
+      "total_acceptance_criteria": 12,
+      "criteria_covered_by_tests": 4,
+      "coverage_pct": 33.3,
+      "uncovered": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "US-001",
+        "US-003",
+        "SC-004"
+      ]
+    },
+    "automation_coverage": {
+      "total_scenarios": 3,
+      "automated": 1,
+      "manual": 2,
+      "coverage_pct": 33.3
+    },
+    "first_pass_rate": {
+      "tests_executed": 3,
+      "tests_passed_first_run": 0,
+      "tests_failed_first_run": 0,
+      "pass_rate_pct": 0.0,
+      "execution_source": "local"
+    },
+    "flake_rate": {
+      "total_retries": 0,
+      "retries_passed_no_code_change": 0,
+      "flake_rate_pct": 0.0
+    },
+    "bugs": {
+      "found": 0,
+      "verified": 0,
+      "details": []
+    },
+    "triage_accuracy": {
+      "total_triaged": 0,
+      "correct": 0,
+      "accuracy_pct": null,
+      "reason": "no_triage_data"
+    },
+    "cost": {
+      "tokens_in": 17000,
+      "tokens_out": 12100,
+      "tokens_total": 29100,
+      "estimated_cost_usd": 0.2325,
+      "wall_time_s": 201.0,
+      "per_stage": [
+        {
+          "stage": "pre_analysis",
+          "tokens_in": 3500,
+          "tokens_out": 2800,
+          "duration_s": 120
+        },
+        {
+          "stage": "test_plan",
+          "tokens_in": 4200,
+          "tokens_out": 3800,
+          "duration_s": 180
+        },
+        {
+          "stage": "consolidation",
+          "tokens_in": 3800,
+          "tokens_out": 1200,
+          "duration_s": 60
+        },
+        {
+          "stage": "code_generation",
+          "tokens_in": 5000,
+          "tokens_out": 3500,
+          "duration_s": 120
+        },
+        {
+          "stage": "execution",
+          "tokens_in": 500,
+          "tokens_out": 800,
+          "duration_s": 30
+        }
+      ]
+    }
+  }

@@ -1,0 +1,612 @@
+{
+  "exported_at": "2026-09-06T18:32:35.739442+00:00",
+  "operator_name": "",
+  "jira_epic_link": "https://issues.redhat.com/browse/SSCSI-264",
+  "jira_epic_name": "SSCSI: Centralized & enforced TLS configuration",
+  "jira_task_name": "SSCSI: Centralized & enforced TLS configuration",
+  "jira_task_link": "https://issues.redhat.com/browse/SSCSI-264",
+  "run": {
+    "id": "b6f67030-0a4d-4823-91be-92597256d09d",
+    "change_name": "SSCSI-264 \u2014 sscsi-264",
+    "jira_key": "SSCSI-264",
+    "branch": "feature/sscsi-264",
+    "status": "archived",
+    "started_at": "2026-09-05T03:22:54.710598+00:00",
+    "completed_at": "2026-09-06T18:19:16.422427+00:00",
+    "archived_at": "2026-09-06T18:32:35.732658+00:00",
+    "total_tokens_in": 72232,
+    "total_tokens_out": 38139,
+    "started_at_display": "05-September-2026 08:52 IST",
+    "archived_at_display": "07-September-2026 00:02 IST"
+  },
+  "phases": [
+    {
+      "id": "335cffd2-0b47-4def-baae-495b3557cc3a",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 1,
+      "phase_name": "spec_understanding",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T03:25:25.465079+00:00",
+      "completed_at": "2026-09-05T03:28:08.221972+00:00",
+      "tokens_in": 1789,
+      "tokens_out": 3370,
+      "quality_score": 0,
+      "quality_label": "approved_skip_gate",
+      "iteration_count": 1,
+      "duration_s": 162.8
+    },
+    {
+      "id": "bfcc852f-d4c1-47f7-ae45-3468bb70768a",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 2,
+      "phase_name": "repo_assessment",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T03:28:23.349845+00:00",
+      "completed_at": "2026-09-05T03:35:31.537049+00:00",
+      "tokens_in": 11896,
+      "tokens_out": 8325,
+      "quality_score": 0,
+      "quality_label": "approved_no_eval_file",
+      "iteration_count": 1,
+      "duration_s": 428.2
+    },
+    {
+      "id": "12eefb61-543d-4272-b84a-289ddfaeffc1",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 3,
+      "phase_name": "arch_planning",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T04:09:50.810798+00:00",
+      "completed_at": "2026-09-05T04:16:21.587445+00:00",
+      "tokens_in": 11896,
+      "tokens_out": 6803,
+      "quality_score": 0,
+      "quality_label": "no-rubric-available",
+      "iteration_count": 1,
+      "duration_s": 390.8
+    },
+    {
+      "id": "fd49c8c5-8671-4964-b988-5101c0f62f34",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 4,
+      "phase_name": "subtask_creation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T04:17:01.016264+00:00",
+      "completed_at": "2026-09-05T04:26:30.334627+00:00",
+      "tokens_in": 10415,
+      "tokens_out": 4350,
+      "quality_score": 0,
+      "quality_label": "structural-gate-passed-no-rubric",
+      "iteration_count": 1,
+      "duration_s": 569.3
+    },
+    {
+      "id": "b88dfccb-3815-4050-96c5-eddd71437e00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 4,
+      "phase_name": "subtask_creation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T04:17:01.016651+00:00",
+      "completed_at": "2026-09-05T04:26:30.334723+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "quality_score": 0,
+      "quality_label": "structural-gate-passed-no-rubric",
+      "iteration_count": 1,
+      "duration_s": 569.3
+    },
+    {
+      "id": "114cffe1-4833-4c75-bb50-d12764734c68",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 5,
+      "phase_name": "code_generation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T04:47:11.308478+00:00",
+      "completed_at": "2026-09-06T18:19:16.422311+00:00",
+      "tokens_in": 25438,
+      "tokens_out": 8987,
+      "quality_score": 0,
+      "quality_label": "batch: 4/4 tasks approved",
+      "iteration_count": 1,
+      "duration_s": 135125.1
+    },
+    {
+      "id": "247b70ae-0953-4346-993d-18f2af16b2bf",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 5,
+      "phase_name": "code_generation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T04:47:11.308901+00:00",
+      "completed_at": "2026-09-05T05:29:27.211062+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "quality_score": 0,
+      "quality_label": "plan_phase_1_complete",
+      "iteration_count": 1,
+      "duration_s": 2535.9
+    },
+    {
+      "id": "52c6e251-5c29-4af4-816c-6e590d9fe48e",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 4,
+      "phase_name": "subtask_creation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T05:39:24.384165+00:00",
+      "completed_at": "2026-09-06T17:54:59.960183+00:00",
+      "tokens_in": 10798,
+      "tokens_out": 6304,
+      "quality_score": 100.0,
+      "quality_label": "structural-pass-no-rubric",
+      "iteration_count": 1,
+      "duration_s": 130535.6
+    },
+    {
+      "id": "7f4dce9a-5d65-43cf-9eaf-223fc99729cd",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_number": 4,
+      "phase_name": "subtask_creation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-05T05:39:24.384667+00:00",
+      "completed_at": "2026-09-06T17:54:59.960286+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "quality_score": 0,
+      "quality_label": "structural-pass-no-rubric",
+      "iteration_count": 1,
+      "duration_s": 130535.6
+    }
+  ],
+  "tasks": [
+    {
+      "id": "dbd50147-cb7e-44b8-84e3-9bb81785d642",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_id": "247b70ae-0953-4346-993d-18f2af16b2bf",
+      "task_id": "T1_1",
+      "task_title": "Confirm config-delivery mechanism and build the observedConfig TLS-policy helper",
+      "agent_id": "OperatorController_Agent",
+      "status": "passed",
+      "started_at": "2026-09-05T04:59:37.294994+00:00",
+      "completed_at": "2026-09-05T04:59:37.370909+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "self_correction_loops": 0,
+      "attribution": "phase_aggregate",
+      "metadata": {
+        "build_status": "passed",
+        "test_status": "passed",
+        "verify_status": "passed",
+        "eval_score": 100
+      }
+    },
+    {
+      "id": "0db614c2-4431-4aeb-bbe7-1b12a1e88de4",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_id": "247b70ae-0953-4346-993d-18f2af16b2bf",
+      "task_id": "T1_2",
+      "task_title": "Conditional manifest, RBAC, and CSV plumbing for the config-delivery mechanism",
+      "agent_id": "ManifestsBindata_Agent",
+      "status": "passed",
+      "started_at": "2026-09-05T04:59:42.634553+00:00",
+      "completed_at": "2026-09-05T05:08:07.410990+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "self_correction_loops": 0,
+      "attribution": "phase_aggregate",
+      "metadata": {
+        "build_status": "passed",
+        "test_status": "skipped",
+        "verify_status": "passed",
+        "eval_score": 100
+      }
+    },
+    {
+      "id": "34c3d4c4-eb7a-43b4-b140-db8cfeb480f2",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_id": "247b70ae-0953-4346-993d-18f2af16b2bf",
+      "task_id": "T1_3",
+      "task_title": "Wire operator serving info to the helper and surface Degraded status",
+      "agent_id": "OperatorController_Agent",
+      "status": "passed",
+      "started_at": "2026-09-05T05:27:32.617485+00:00",
+      "completed_at": "2026-09-05T05:29:19.907690+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "self_correction_loops": 0,
+      "attribution": "phase_aggregate",
+      "metadata": {
+        "build_status": "passed",
+        "test_status": "passed",
+        "verify_status": "passed"
+      }
+    },
+    {
+      "id": "052fc851-4b32-47bb-a7e2-e47dd8028dec",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "phase_id": "",
+      "task_id": "T2_1",
+      "task_title": "Document upstream TLS blocker and finalize the tls-profiles capability annotation",
+      "agent_id": "OLMRelease_Agent",
+      "status": "passed",
+      "started_at": "2026-09-06T18:04:09.302759+00:00",
+      "completed_at": "2026-09-06T18:14:33.429785+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "self_correction_loops": 0,
+      "attribution": "phase_aggregate",
+      "metadata": {
+        "build_status": "passed",
+        "test_status": "passed",
+        "verify_status": "passed",
+        "eval_score": 100
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "d202996e-1be4-4244-b784-046ee28c88a9",
+      "ts": "2026-09-05T03:25:45.568090+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'validation' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "fbb5d2d7-896c-4cd3-8282-2569364a69bb",
+      "ts": "2026-09-05T03:26:15.521575+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'validation' ready for approval (eval score: 56.0%) \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "47972641-98a9-4e82-bb2c-64a16c63af12",
+      "ts": "2026-09-05T03:26:21.418838+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'validation'",
+      "metadata_json": null
+    },
+    {
+      "id": "c7993311-1f4b-4cd7-bb56-36a0e0f2694d",
+      "ts": "2026-09-05T03:26:21.418976+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'validation' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "ff84cf00-9658-4c68-96c5-06605343fce2",
+      "ts": "2026-09-05T03:27:47.364396+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'specs' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "3329db5c-50d8-4919-9422-7df36a68caea",
+      "ts": "2026-09-05T03:28:08.142105+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'specs' ready for approval \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "47db1ff3-52c1-43c7-aa3f-af307a61bf27",
+      "ts": "2026-09-05T03:28:08.221750+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'specs'",
+      "metadata_json": null
+    },
+    {
+      "id": "19b6f5b3-aa55-4372-b3e0-2011f8ee0c8d",
+      "ts": "2026-09-05T03:28:08.221896+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'specs' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "13354368-d31e-4249-8aab-7faf0862b543",
+      "ts": "2026-09-05T03:34:59.802641+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'repo-assessment' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "e0fb9c33-b592-43cd-8404-789fdd98822a",
+      "ts": "2026-09-05T03:35:31.453817+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'repo-assessment' ready for approval \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "3658503a-a6a7-40db-a55e-027f1b3637f8",
+      "ts": "2026-09-05T03:35:31.533836+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'repo-assessment'",
+      "metadata_json": null
+    },
+    {
+      "id": "b6ed3ec8-3be1-488a-a8bb-1efb72352b44",
+      "ts": "2026-09-05T03:35:31.534218+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'repo-assessment' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "1e797008-d1ac-4a65-9565-843c28eddb32",
+      "ts": "2026-09-05T04:15:27.213602+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'plan' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "b0dd1e27-2c2a-4e3f-a58e-01e7f1f12a7e",
+      "ts": "2026-09-05T04:16:21.509860+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'plan' ready for approval \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "3841d3be-d674-4943-957f-f56fb55cf807",
+      "ts": "2026-09-05T04:16:21.587139+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'plan'",
+      "metadata_json": null
+    },
+    {
+      "id": "e158ad83-418f-45b7-9982-a65d79057188",
+      "ts": "2026-09-05T04:16:21.587324+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'plan' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "0b96ef4b-a489-4e8c-91ff-3ac22bea97f0",
+      "ts": "2026-09-05T04:25:52.225940+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "1bd34403-5a43-4445-a8f9-3f523c041022",
+      "ts": "2026-09-05T04:26:30.261987+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' ready for approval \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "8f077eac-278f-48d8-9c86-4f323d627937",
+      "ts": "2026-09-05T04:26:30.334383+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'tasks'",
+      "metadata_json": null
+    },
+    {
+      "id": "56bc174c-b68a-4ab7-8336-defa7ff5971a",
+      "ts": "2026-09-05T04:26:30.334527+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "c1f4127b-d53c-425e-b694-c7da060582b5",
+      "ts": "2026-09-05T04:59:37.371118+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Task T1_1 completed (batch mode \u2014 tokens attributed at phase level)",
+      "metadata_json": null
+    },
+    {
+      "id": "5818e6ba-606c-4abd-bb34-a69df9bc3d68",
+      "ts": "2026-09-05T05:08:07.411155+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Task T1_2 completed (batch mode \u2014 tokens attributed at phase level)",
+      "metadata_json": null
+    },
+    {
+      "id": "5bb86def-976b-44a0-8631-51a31595c6fd",
+      "ts": "2026-09-05T05:29:19.907839+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Task T1_3 completed (batch mode \u2014 tokens attributed at phase level)",
+      "metadata_json": null
+    },
+    {
+      "id": "c5e57f41-c7bf-484a-bf5a-1b248f8ff489",
+      "ts": "2026-09-06T17:53:24.349587+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "78532cc3-1366-4a21-b890-120fcc608ec5",
+      "ts": "2026-09-06T17:54:50.288726+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' ready for approval (eval score: 100.0%) \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "0280527e-ee01-4ff9-81f9-ff1e3cd3ed56",
+      "ts": "2026-09-06T17:54:59.959937+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'tasks'",
+      "metadata_json": null
+    },
+    {
+      "id": "6660192d-da1d-4a45-9236-311af12d739d",
+      "ts": "2026-09-06T17:54:59.960082+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "2d2bbffe-3b7f-44e5-bd17-c8dc5620d587",
+      "ts": "2026-09-06T18:14:33.429935+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Task T2_1 completed (batch mode \u2014 tokens attributed at phase level)",
+      "metadata_json": null
+    },
+    {
+      "id": "33519ce6-6571-490e-bf70-d4c9841f833b",
+      "ts": "2026-09-06T18:19:16.422166+00:00",
+      "run_id": "b6f67030-0a4d-4823-91be-92597256d09d",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Phase 5 completing in batch mode \u2014 tokens estimated at phase level",
+      "metadata_json": null
+    }
+  ],
+  "global_health": {
+    "total_tokens_consumed": 110371,
+    "estimated_cost_usd": 0.7888,
+    "cumulative_wall_time_s": 400852.6,
+    "compliance_index": 100.0,
+    "gate_passing_rate": 100.0,
+    "human_rejection_rate": 0.0,
+    "total_refinement_iterations": 0,
+    "agent_success_rate": 100.0,
+    "tasks_passed": 4,
+    "tasks_total": 4
+  },
+  "artifact_edits": {
+    "artifacts": [
+      {
+        "artifact_id": "validation",
+        "phase_name": "spec_understanding",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      },
+      {
+        "artifact_id": "specs",
+        "phase_name": "spec_understanding",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      },
+      {
+        "artifact_id": "repo-assessment",
+        "phase_name": "repo_assessment",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      },
+      {
+        "artifact_id": "plan",
+        "phase_name": "arch_planning",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      },
+      {
+        "artifact_id": "tasks",
+        "phase_name": "subtask_creation",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      }
+    ],
+    "total_edits": 0
+  },
+  "productivity_metrics": {
+    "story_points_delivered": 2.0,
+    "estimated_manual_effort": "8-16 hours (2 days)",
+    "estimated_manual_hours": 12.0,
+    "actual_wall_time_hours": 111.35,
+    "time_saved_hours": 0,
+    "satisfaction_rating": 4,
+    "comments": "",
+    "captured_at": "2026-09-06T18:32:35.732658+00:00",
+    "captured_at_display": "07-September-2026 00:02 IST"
+  },
+  "report_status": {
+    "complete": true,
+    "missing_fields": []
+  }
+}

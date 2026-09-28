@@ -1,0 +1,83 @@
+{
+  "exported_at": "2026-09-23T06:29:46.839848+00:00",
+  "change_name": "smc-inspect-graph",
+  "jira_task_link": "https://redhat.atlassian.net/browse/SMC-61",
+  "jira_task_name": "Add a \"Related Resources\" section to the inspect page",
+  "pr_url": "https://github.com/openshift/ocp-secrets-management-console/pull/124",
+  "phase": null,
+  "mode": "phase-iterative",
+  "ac_scenario_coverage": {
+    "total_acceptance_criteria": 0,
+    "criteria_covered_by_tests": 0,
+    "coverage_pct": null,
+    "uncovered": [],
+    "source": "no_specs_available"
+  },
+  "automation_coverage": {
+    "total_scenarios": 11,
+    "automated": 7,
+    "manual": 4,
+    "coverage_pct": 63.6
+  },
+  "first_pass_rate": {
+    "tests_executed": 11,
+    "tests_passed_first_run": 1,
+    "tests_failed_first_run": 10,
+    "pass_rate_pct": 9.1,
+    "execution_source": "local_manual",
+    "reason": "no_e2e_events_jsonl \u2014 counts reconstructed manually from e2e-evaluation-report.md, not from telemetry"
+  },
+  "flake_rate": {
+    "total_retries": null,
+    "retries_passed_no_code_change": null,
+    "flake_rate_pct": null,
+    "reason": "no_local_execution_telemetry"
+  },
+  "bugs": {
+    "found": 0,
+    "verified": 0,
+    "details": [],
+    "note": "0 product bugs found in PR #124. All 4 excluded test failures (E2E-003, E2E-007, NEG-002, NEG-003) were root-caused as test-side issues (locator ambiguity, a pre-existing mock-api.ts bug, wrong behavioral assumptions) \u2014 see e2e-evaluation-report.md."
+  },
+  "triage_accuracy": {
+    "total_triaged": 0,
+    "correct": 0,
+    "accuracy_pct": null,
+    "reason": "no_triage_data"
+  },
+  "cost": {
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tokens_total": 0,
+    "estimated_cost_usd": 0.0,
+    "wall_time_s": 0,
+    "per_stage": []
+  },
+  "time_saved": {
+    "development_pct": null,
+    "e2e_pct": null
+  },
+  "user_feedback": "None",
+  "productivity_metrics": {
+    "story_points_delivered": 2,
+    "estimated_manual_effort": "8-16 hours (2 days)",
+    "estimated_manual_hours": 12.0,
+    "actual_wall_time_hours": null,
+    "time_saved_hours": null,
+    "satisfaction_rating": 4,
+    "comments": "",
+    "captured_at": "2026-09-23T06:33:00+00:00",
+    "captured_at_display": "23-September-2026 12:03 IST"
+  },
+  "qe_report_status": {
+    "complete": false,
+    "source": "manually_authored",
+    "missing_fields": [
+      "cost.tokens_*/wall_time_s (no e2e-events.jsonl \u2014 on-qe-* hooks were never invoked during this manual /opsx-e2e execution)",
+      "actual_wall_time_hours / time_saved_hours (not measured; no telemetry wall-clock recorded)",
+      "ac_scenario_coverage (no specs.md exists \u2014 this was a standalone E2E run against SMC-61/PR #124, not a full dev workflow with formal specs)",
+      "flake_rate / triage_accuracy (no local-execution telemetry events recorded)"
+    ],
+    "note": "automation_coverage, first_pass_rate, and bugs were reconstructed by hand from openspec/changes/smc-inspect-graph/e2e/e2e-evaluation-report.md (11 tests generated \u2192 7 kept/passing, 4 excluded as test-side issues), not computed by qe_metrics.py's normal event-driven logic (which requires e2e-events.jsonl that was never written). satisfaction_rating and story_points_delivered come directly from user-feedback.md (collected via /opsx-archive)."
+  }
+}

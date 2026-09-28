@@ -1,0 +1,552 @@
+{
+  "exported_at": "2026-09-23T09:39:40.634526+00:00",
+  "operator_name": "must-gather-operator",
+  "jira_epic_link": "",
+  "jira_epic_name": "",
+  "jira_task_name": "Network policies for operator and must-gather jobs",
+  "jira_task_link": "https://redhat.atlassian.net/browse/MG-365",
+  "run": {
+    "id": "96c40fd7-4de8-4877-8644-cd9879390790",
+    "change_name": "MG-365 \u2014 mg-365",
+    "jira_key": "MG-365",
+    "branch": "feature/mg-365",
+    "status": "archived",
+    "started_at": "2026-09-23T08:21:41.074829+00:00",
+    "completed_at": "2026-09-23T09:27:41.274507+00:00",
+    "archived_at": "2026-09-23T09:39:40.626624+00:00",
+    "total_tokens_in": 44521,
+    "total_tokens_out": 15888,
+    "started_at_display": "23-September-2026 13:51 IST",
+    "archived_at_display": "23-September-2026 15:09 IST"
+  },
+  "phases": [
+    {
+      "id": "ded4bb63-7193-40ea-8823-0b1cdbd0f11f",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 1,
+      "phase_name": "spec_understanding",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-23T08:22:54.842470+00:00",
+      "completed_at": "2026-09-23T08:27:42.947016+00:00",
+      "tokens_in": 2954,
+      "tokens_out": 5260,
+      "quality_score": 85.0,
+      "quality_label": "approved",
+      "iteration_count": 1,
+      "duration_s": 288.1
+    },
+    {
+      "id": "0a5e2c4c-cf5a-4a6c-82c7-26247e4f98f3",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 2,
+      "phase_name": "repo_assessment",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-23T08:29:05.964551+00:00",
+      "completed_at": "2026-09-23T08:31:14.593296+00:00",
+      "tokens_in": 5120,
+      "tokens_out": 2926,
+      "quality_score": 88.0,
+      "quality_label": "approved",
+      "iteration_count": 1,
+      "duration_s": 128.6
+    },
+    {
+      "id": "e0652a7f-cedb-4f26-9ca2-402a5c1941ec",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 3,
+      "phase_name": "arch_planning",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-23T08:34:58.022583+00:00",
+      "completed_at": "2026-09-23T08:36:14.692368+00:00",
+      "tokens_in": 8046,
+      "tokens_out": 2316,
+      "quality_score": 90.0,
+      "quality_label": "approved",
+      "iteration_count": 1,
+      "duration_s": 76.7
+    },
+    {
+      "id": "cff78e54-d4c3-4efa-a5fe-fcc8692bbb75",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 4,
+      "phase_name": "subtask_creation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-23T08:37:51.055272+00:00",
+      "completed_at": "2026-09-23T08:38:41.120414+00:00",
+      "tokens_in": 7436,
+      "tokens_out": 974,
+      "quality_score": 92.0,
+      "quality_label": "approved",
+      "iteration_count": 1,
+      "duration_s": 50.1
+    },
+    {
+      "id": "0181e3d5-e591-45e3-b016-48dbfea6cbe4",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 4,
+      "phase_name": "subtask_creation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-23T08:37:51.055560+00:00",
+      "completed_at": "2026-09-23T08:38:41.120513+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "quality_score": 0,
+      "quality_label": "approved",
+      "iteration_count": 1,
+      "duration_s": 50.1
+    },
+    {
+      "id": "e8c02f8d-4363-4a38-821a-0770d917613d",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 4,
+      "phase_name": "subtask_creation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-23T08:41:52.882972+00:00",
+      "completed_at": "2026-09-23T08:43:36.245725+00:00",
+      "tokens_in": 7436,
+      "tokens_out": 3622,
+      "quality_score": 90.0,
+      "quality_label": "approved",
+      "iteration_count": 1,
+      "duration_s": 103.4
+    },
+    {
+      "id": "a35e0229-9a70-4e8f-b9e3-48c02db247cb",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 4,
+      "phase_name": "subtask_creation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-23T08:41:52.883270+00:00",
+      "completed_at": "2026-09-23T08:43:36.245834+00:00",
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "quality_score": 0,
+      "quality_label": "approved",
+      "iteration_count": 1,
+      "duration_s": 103.4
+    },
+    {
+      "id": "8ec164ab-9ef6-49ff-af1e-2c0b9c26cd1d",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 5,
+      "phase_name": "code_generation",
+      "model_id": "",
+      "status": "passed",
+      "started_at": "2026-09-23T08:45:18.406147+00:00",
+      "completed_at": "2026-09-23T09:27:41.274331+00:00",
+      "tokens_in": 7006,
+      "tokens_out": 678,
+      "quality_score": 0,
+      "quality_label": "batch: 3/4 tasks approved",
+      "iteration_count": 1,
+      "duration_s": 2542.9
+    },
+    {
+      "id": "0bbf8790-b021-4239-b1be-818e7336bcd6",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_number": 5,
+      "phase_name": "code_generation",
+      "model_id": "",
+      "status": "running",
+      "started_at": "2026-09-23T08:45:18.406992+00:00",
+      "completed_at": null,
+      "tokens_in": 6523,
+      "tokens_out": 112,
+      "quality_score": 0,
+      "quality_label": "task_T1_1_passed",
+      "iteration_count": 1,
+      "duration_s": 0.0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "9f442a9c-c940-40ff-a00c-a91faf976594",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_id": "0bbf8790-b021-4239-b1be-818e7336bcd6",
+      "task_id": "T1_1",
+      "task_title": "Consolidate static operator NetworkPolicy into single manifest",
+      "agent_id": "direct",
+      "status": "passed",
+      "started_at": "2026-09-23T08:45:36.960931+00:00",
+      "completed_at": "2026-09-23T08:46:43.296853+00:00",
+      "tokens_in": 6523,
+      "tokens_out": 112,
+      "self_correction_loops": 0,
+      "attribution": null,
+      "metadata": {
+        "build_status": "skipped",
+        "test_status": "skipped",
+        "verify_status": "passed",
+        "eval_score": 100
+      }
+    },
+    {
+      "id": "2d43ec37-cc2e-4245-9af1-a3c636db66f0",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_id": "",
+      "task_id": "T2_1",
+      "task_title": "Implement Tier 1 namespace-level default NetworkPolicy and dual pod labels",
+      "agent_id": "direct",
+      "status": "passed",
+      "started_at": "2026-09-23T08:47:43.022379+00:00",
+      "completed_at": "2026-09-23T08:50:24.080978+00:00",
+      "tokens_in": 6525,
+      "tokens_out": 140,
+      "self_correction_loops": 0,
+      "attribution": null,
+      "metadata": {
+        "build_status": "passed",
+        "test_status": "skipped",
+        "verify_status": "passed",
+        "eval_score": 85
+      }
+    },
+    {
+      "id": "a2d55d6f-735a-4324-9a49-fe7af8820e6e",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "phase_id": "",
+      "task_id": "T2_3",
+      "task_title": "Update cleanup logic and rewrite tests",
+      "agent_id": "direct",
+      "status": "passed",
+      "started_at": "2026-09-23T08:51:08.381452+00:00",
+      "completed_at": "2026-09-23T09:27:14.919799+00:00",
+      "tokens_in": 6537,
+      "tokens_out": 67,
+      "self_correction_loops": 0,
+      "attribution": null,
+      "metadata": {
+        "build_status": "passed",
+        "test_status": "passed",
+        "verify_status": "passed",
+        "eval_score": 95
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "dbbf6b57-65e2-4900-abf5-451f1f58e1da",
+      "ts": "2026-09-23T08:23:38.618415+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'validation' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "8c005727-f3cf-428d-a14d-843dd19de467",
+      "ts": "2026-09-23T08:23:49.071744+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'validation' ready for approval (eval score: 79.0%) \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "31936d3f-b178-4193-a6cd-5a39d4063cab",
+      "ts": "2026-09-23T08:24:31.040593+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'validation'",
+      "metadata_json": null
+    },
+    {
+      "id": "62b062d5-07c7-4c34-8015-c01b5adbb0cf",
+      "ts": "2026-09-23T08:24:31.040759+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'validation' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "615f2b7a-4ae3-458d-ab88-7b45985b96d3",
+      "ts": "2026-09-23T08:26:44.616556+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'specs' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "d0caede3-7a0d-49f7-b2fb-ed5d8a99e5c9",
+      "ts": "2026-09-23T08:27:09.167131+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'specs' ready for approval (eval score: 85.0%) \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "0e6d9954-67f6-46e1-9f7b-4c6062c86185",
+      "ts": "2026-09-23T08:27:42.946752+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'specs'",
+      "metadata_json": null
+    },
+    {
+      "id": "a5411260-6fb3-4d6a-a406-2d11bd09b092",
+      "ts": "2026-09-23T08:27:42.946936+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'specs' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "39631fe8-d552-49ea-a6eb-30ad2b10f984",
+      "ts": "2026-09-23T08:29:52.199149+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'repo-assessment' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "321bb3a1-fbb0-48c2-9a50-3c9b2433e8e5",
+      "ts": "2026-09-23T08:30:23.212734+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'repo-assessment' ready for approval (eval score: 88.0%) \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "374e4653-6a5a-4301-969d-9b712963fcdb",
+      "ts": "2026-09-23T08:31:14.593060+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'repo-assessment'",
+      "metadata_json": null
+    },
+    {
+      "id": "310c8301-a3c6-435d-981e-59f854ab044e",
+      "ts": "2026-09-23T08:31:14.593217+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'repo-assessment' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "d5b91103-0a05-4e6a-8436-8fa8ead36ced",
+      "ts": "2026-09-23T08:35:38.362035+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'plan' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "271fed3f-d026-4755-9698-ee8eef9d73e0",
+      "ts": "2026-09-23T08:35:47.885545+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'plan' ready for approval (eval score: 90.0%) \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "3b715e19-fc53-4936-a341-1741e45267f6",
+      "ts": "2026-09-23T08:36:14.692148+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'plan'",
+      "metadata_json": null
+    },
+    {
+      "id": "af28b689-0559-4c3a-a88e-09be08672dc6",
+      "ts": "2026-09-23T08:36:14.692288+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'plan' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "671250d6-d0e2-42f3-8167-babd27cb1c22",
+      "ts": "2026-09-23T08:38:12.216794+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "d1da71dd-ea24-4efd-8cd9-b30b097ce9b8",
+      "ts": "2026-09-23T08:38:21.514936+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' ready for approval (eval score: 92.0%) \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "13b7f804-95b1-4bb7-be3c-bcc3dfa5db80",
+      "ts": "2026-09-23T08:38:41.120149+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'tasks'",
+      "metadata_json": null
+    },
+    {
+      "id": "f3a7c6a9-bcc4-49c0-9f96-169c5d4635d0",
+      "ts": "2026-09-23T08:38:41.120299+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "dd9c315c-a8ad-4d33-b81b-0665579bb4f3",
+      "ts": "2026-09-23T08:42:58.614023+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' created \u2014 awaiting eval gate",
+      "metadata_json": null
+    },
+    {
+      "id": "8e1d9b5c-9814-482f-9f9d-35cbbc097be9",
+      "ts": "2026-09-23T08:43:12.784325+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' ready for approval (eval score: 90.0%) \u2014 waiting for human decision",
+      "metadata_json": null
+    },
+    {
+      "id": "6ab55790-c935-493a-9a2e-c50404921c1e",
+      "ts": "2026-09-23T08:43:36.245351+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Human approved artifact 'tasks'",
+      "metadata_json": null
+    },
+    {
+      "id": "f3b0e98b-0b56-4504-a79f-119262aab766",
+      "ts": "2026-09-23T08:43:36.245607+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Artifact 'tasks' completed with status: passed",
+      "metadata_json": null
+    },
+    {
+      "id": "8a1a63a6-9191-40f5-a487-8ae1bf4d522d",
+      "ts": "2026-09-23T09:27:41.274073+00:00",
+      "run_id": "96c40fd7-4de8-4877-8644-cd9879390790",
+      "task_id": null,
+      "agent_id": "Pipeline",
+      "event_type": "state_machine",
+      "message": "Phase 5 completing in batch mode \u2014 tokens estimated at phase level",
+      "metadata_json": null
+    }
+  ],
+  "global_health": {
+    "total_tokens_consumed": 60409,
+    "estimated_cost_usd": 0.3719,
+    "cumulative_wall_time_s": 3960.2,
+    "compliance_index": 89.0,
+    "gate_passing_rate": 88.9,
+    "human_rejection_rate": 0.0,
+    "total_refinement_iterations": 0,
+    "agent_success_rate": 100.0,
+    "tasks_passed": 3,
+    "tasks_total": 3
+  },
+  "artifact_edits": {
+    "artifacts": [
+      {
+        "artifact_id": "validation",
+        "phase_name": "spec_understanding",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      },
+      {
+        "artifact_id": "specs",
+        "phase_name": "spec_understanding",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      },
+      {
+        "artifact_id": "repo-assessment",
+        "phase_name": "repo_assessment",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      },
+      {
+        "artifact_id": "plan",
+        "phase_name": "arch_planning",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      },
+      {
+        "artifact_id": "tasks",
+        "phase_name": "subtask_creation",
+        "eval_refinements": 0,
+        "feedback_rounds": 0,
+        "total_edits": 0
+      }
+    ],
+    "total_edits": 0
+  },
+  "productivity_metrics": {
+    "story_points_delivered": 5.0,
+    "estimated_manual_effort": "8-16 hours (2 days)",
+    "estimated_manual_hours": 12.0,
+    "actual_wall_time_hours": 1.1,
+    "time_saved_hours": 10.9,
+    "satisfaction_rating": 4,
+    "comments": "Good overall experience",
+    "captured_at": "2026-09-23T09:39:40.626624+00:00",
+    "captured_at_display": "23-September-2026 15:09 IST"
+  },
+  "report_status": {
+    "complete": true,
+    "missing_fields": []
+  }
+}
