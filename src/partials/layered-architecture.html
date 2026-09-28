@@ -1,0 +1,83 @@
+      <!-- Tools for Layered Architecture -->
+      <div class="card-collapsible">
+        <div class="card-collapsible-header" onclick="this.closest('.card-collapsible').classList.toggle('open')">
+          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path d="M7.293 4.707a1 1 0 011.414 0L14.414 10l-5.707 5.293a1 1 0 01-1.414-1.414L11.586 10 7.293 5.879a1 1 0 010-1.172z"/></svg>
+          <div><h3>Tools for Layered Architecture</h3><p class="section-sub">Platforms and tools across the five-layer architecture stack</p></div>
+        </div>
+        <div class="card-collapsible-body">
+          <div class="card-collapsible-content">
+            <div class="layer-stack-wrap"><table class="layer-stack">
+              <thead>
+                <tr>
+                  <th>Layer</th>
+                  <th>Tools</th>
+                  <th>Criteria</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="layer-row">
+                  <td class="layer-label l5">L5 Model</td>
+                  <td class="layer-tools">
+                    <span class="tool-chip">Claude Sonnet/Opus <span class="tool-status" style="background:var(--green)">Accepted</span></span>
+                    <span class="tool-chip">Gemini <span class="tool-status" style="background:var(--red)">Dropped</span></span>
+                    <span class="tool-chip">GPT <span class="tool-status" style="background:var(--orange)">Fair</span></span>
+                  </td>
+                  <td><ul><li>Report / code generation quality and alignment with human interpretations.</li></ul></td>
+                  <td><ul><li>Composer leads with overall performance while Anthropic models fair better than Gemini</li></ul></td>
+                </tr>
+                <tr class="layer-row">
+                  <td class="layer-label l4">L4 Runtime</td>
+                  <td class="layer-tools">
+                    <span class="tool-chip">OpenCode <span class="tool-status" style="background:var(--orange)">WIP</span></span>
+                    <span class="tool-chip">Cursor <span class="tool-status" style="background:var(--orange)">Testing</span></span>
+                    <span class="tool-chip">Claude Code <span class="tool-status" style="background:var(--orange)">WIP</span></span>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Developer adoption, integration with OpenSpec flow, token efficiency</li>
+                      <li>Compliance with Enterprise policy</li>
+                    </ul>
+                  </td>
+                  <td><ul><li>OpenCode is still being reviewed. Cursor (CLI) and Claude Code fairs well</li></ul></td>
+                </tr>
+                <tr class="layer-row">
+                  <td class="layer-label l3">L3 Harness &amp; Orchestration</td>
+                  <td class="layer-tools">
+                    <span class="tool-chip">Agentic Docs <span class="tool-status" style="background:var(--blue)">In Use</span></span>
+                    <span class="tool-chip">OpenSpec <span class="tool-status" style="background:var(--green)">Active</span></span>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Traceability, Human gates in loop for orchestration</li>
+                      <li>Agentic guidelines for high quality outputs.</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>The agentic flow is orchestrated with OpenSpec</li>
+                      <li>Agentic docs evaluation in progress</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr class="layer-row">
+                  <td class="layer-label l2">L2 Sandbox</td>
+                  <td class="layer-tools">
+                    <span class="tool-chip">OpenShell <span class="tool-status" style="background:var(--orange)">WIP</span></span>
+                  </td>
+                  <td><ul><li>Security and policy enforcement and checks</li></ul></td>
+                  <td><ul><li>Evaluation still in progress</li></ul></td>
+                </tr>
+                <tr class="layer-row">
+                  <td class="layer-label l1">L1 Infra</td>
+                  <td class="layer-tools">
+                    <span class="tool-chip">Laptop &amp; Cluster <span class="tool-status" style="background:var(--green)">Tested</span></span>
+                  </td>
+                  <td><ul><li>Reliability and cost</li></ul></td>
+                  <td><ul><li>Laptop and K8s fair well</li></ul></td>
+                </tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+      </div>

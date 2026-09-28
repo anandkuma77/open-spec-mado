@@ -1,0 +1,255 @@
+# Consolidated eval cases — code-generation stage
+# Rounds 1–2 | Feature class: operand security hardening
+# These evals run during /opsx-apply, not /opsx-continue
+# Each case tagged with oape_command
+
+stage: code-generation
+artifact: generated code
+
+evals:
+  # --- Round 1 cases (retained) ---
+
+  - id: eval-r001-cg-001
+    round: 1
+    stage: code-generation
+    source_issue_ids: [PAT-007]
+    oape_command: api-implement
+    title: Security context modifications include unit test assertions
+    prompt: >-
+      When generated code modifies DaemonSet or Deployment security context fields
+      (capabilities, privileged mode, runAsUser, hostNetwork, dnsPolicy), the
+      implementation must include corresponding unit tests that assert the exact
+      field values in the reconciled resource.
+    assertions:
+      - type: test_coverage
+        criteria: >-
+          Every security context field change must have a corresponding unit test
+          assertion. Tests must verify both the positive case (correct value set)
+          and the regression case (incorrect value detected).
+      - type: code_pattern
+        criteria: >-
+          Unit tests for security context must use field-level assertions
+          (e.g., assert on securityContext.Privileged, securityContext.Capabilities.Drop)
+          rather than full-object comparison.
+    scoring:
+      weight: 1.0
+      rubric: >-
+        1.0 = all security context field changes have unit test assertions;
+        0.5 = some fields tested but not all;
+        0.0 = no unit tests for security context changes.
+    pass_threshold: 0.8
+
+  - id: eval-r001-cg-002
+    round: 1
+    stage: code-generation
+    source_issue_ids: [PAT-006]
+    oape_command: api-implement
+    title: Manifest/bindata changes include reconciliation verification
+    prompt: >-
+      When generated code adds or modifies operator-reconciled manifests (SCCs,
+      RoleBindings, DaemonSet specs), the implementation must include verification
+      that the reconciler correctly applies the manifest content and that the
+      reconciled resource matches the expected specification.
+    assertions:
+      - type: test_coverage
+        criteria: >-
+          Manifest changes must include unit tests that verify the reconciler
+          produces the expected resource specification. Tests should assert on
+          key fields of the reconciled resource, not just that reconciliation
+          completes without error.
+      - type: code_pattern
+        criteria: >-
+          Reconciliation code must follow the repo's existing imperative pattern
+          (Create/UpdateWithRetry via the operator's custom client interface, not
+          Server-Side Apply or raw client.Client) as documented in the constitution
+          and agents.md.
+    scoring:
+      weight: 1.0
+      rubric: >-
+        1.0 = reconciliation verification covers all changed manifests;
+        0.5 = some manifests verified but not all;
+        0.0 = no reconciliation verification for manifest changes.
+    pass_threshold: 0.8
+
+  - id: eval-r001-cg-003
+    round: 1
+    stage: code-generation
+    source_issue_ids: [PAT-005]
+    oape_command: manual
+    title: RBAC changes include corresponding ClusterRole/RoleBinding manifests
+    prompt: >-
+      When generated code changes the operator's RBAC permissions (new ClusterRoles,
+      RoleBindings, or SCC access grants), the implementation must include the
+      complete RBAC manifests and ensure they match the plan's RBAC delta analysis.
+    assertions:
+      - type: code_pattern
+        criteria: >-
+          RBAC manifests must be complete (not partial) and include all required
+          verbs, resources, and API groups. RoleBindings must reference correct
+          service accounts and ClusterRoles.
+      - type: test_coverage
+        criteria: >-
+          RBAC changes must be verifiable via `make manifests` or equivalent
+          code generation commands. The generated RBAC must pass `make verify`.
+    scoring:
+      weight: 1.0
+      rubric: >-
+        1.0 = complete RBAC manifests with verification passing;
+        0.5 = RBAC manifests present but incomplete or not verified;
+        0.0 = RBAC changes in code but no manifests.
+    pass_threshold: 0.8
+
+  - id: eval-r001-cg-004
+    round: 1
+    stage: code-generation
+    source_issue_ids: [PAT-004]
+    oape_command: api-implement
+    title: Resource deprecation removes reconciliation without breaking upgrade
+    prompt: >-
+      When generated code stops reconciling a previously operator-managed resource,
+      the implementation must cleanly remove reconciliation logic without breaking
+      upgrade scenarios. The deprecated resource must not be actively deleted
+      unless the plan explicitly requires cleanup.
+    assertions:
+      - type: code_pattern
+        criteria: >-
+          Deprecation code must remove the reconciliation call (not leave dead code
+          paths) and update any status conditions that referenced the deprecated
+          resource. Controller watches for the deprecated resource must be removed.
+      - type: test_coverage
+        criteria: >-
+          Unit tests must verify that the reconciler no longer attempts to create,
+          update, or delete the deprecated resource. If upgrade handling is required,
+          tests must cover the upgrade scenario (old resource exists, operator ignores it).
+    scoring:
+      weight: 0.8
+      rubric: >-
+        1.0 = clean deprecation with upgrade-safe behavior and tests;
+        0.5 = reconciliation removed but no upgrade scenario testing;
+        0.0 = dead code paths left or deprecation incomplete.
+    pass_threshold: 0.7
+
+  - id: eval-r001-cg-005
+    round: 1
+    stage: code-generation
+    source_issue_ids: [PAT-003]
+    oape_command: manual
+    title: SCC manifest correctness and completeness
+    prompt: >-
+      When generated code creates or modifies SecurityContextConstraints manifests,
+      the SCC must be complete (all required fields present), internally consistent,
+      and must match the requirements specified in the EP/spec.
+    assertions:
+      - type: code_pattern
+        criteria: >-
+          SCC manifests must include all required fields: allowPrivilegedContainer,
+          allowedCapabilities, requiredDropCapabilities, runAsUser, seLinuxContext,
+          supplementalGroups, fsGroup, volumes, and host access booleans. No field
+          should be omitted (relying on defaults for security-critical settings is
+          an anti-pattern).
+      - type: test_coverage
+        criteria: >-
+          SCC manifests must be tested for correctness — either via unit tests that
+          decode and assert field values, or via verification scripts that validate
+          the manifest against the SCC API schema.
+    scoring:
+      weight: 0.8
+      rubric: >-
+        1.0 = complete SCC manifest with all fields explicit and tested;
+        0.5 = SCC manifest present but some fields implicit/untested;
+        0.0 = SCC manifest incomplete or not tested.
+    pass_threshold: 0.7
+
+  # --- Round 2 cases (new) ---
+
+  - id: eval-r002-cg-006
+    round: 2
+    stage: code-generation
+    source_issue_ids: [PAT-009]
+    oape_command: api-implement
+    title: Reconciliation code uses correct client interface pattern
+    prompt: >-
+      When generated code produces reconciliation logic for new resource types, the
+      code must use the operator's established client interface pattern (as documented
+      in agents.md and constitution.md), not alternative patterns. For operators using
+      imperative create/update, code must not use Server-Side Apply. For operators using
+      SSA, code must not use imperative create/update.
+    assertions:
+      - type: code_pattern
+        criteria: >-
+          Generated reconciliation code must use the operator's custom client interface
+          (e.g., CustomCtrlClient for ZTWIM, CtrlClient for cert-manager addons) with
+          the correct method calls (CreateOrUpdateObject/UpdateWithRetry for imperative,
+          client.Apply for SSA). Code must not import or call patterns prohibited by
+          the constitution.
+      - type: code_pattern
+        criteria: >-
+          The reconciliation function must follow the existing operand controller pattern:
+          decode bindata → mutate object → check existence → compare with drift detection →
+          create or update. No shortcuts that bypass the drift detection or retry logic.
+    scoring:
+      weight: 1.0
+      rubric: >-
+        1.0 = correct client interface used with proper pattern throughout;
+        0.5 = correct interface used but pattern shortcuts taken;
+        0.0 = wrong client interface or prohibited pattern used.
+    pass_threshold: 0.8
+
+  - id: eval-r002-cg-007
+    round: 2
+    stage: code-generation
+    source_issue_ids: [PAT-010, PAT-011]
+    oape_command: api-implement
+    title: New resource types registered in drift detection and cache
+    prompt: >-
+      When generated code adds reconciliation for a new Kubernetes resource type, the
+      implementation must include registration in the drift detection comparison function
+      and in the cache builder configuration with appropriate label selectors.
+    assertions:
+      - type: code_pattern
+        criteria: >-
+          New resource types must be added to the resource comparison function (e.g.,
+          ResourceNeedsUpdate) with field-level comparison logic specific to the resource
+          type. Full DeepEqual is not acceptable for operator-managed resources.
+      - type: code_pattern
+        criteria: >-
+          New watched resource types must be added to the cache builder (e.g.,
+          NewCacheBuilder) with the correct label selector matching the operator's
+          managed-by label. Resources not in the cache are invisible to controllers.
+    scoring:
+      weight: 0.8
+      rubric: >-
+        1.0 = both drift detection and cache registration complete with correct config;
+        0.5 = one of drift detection or cache registration present but not both;
+        0.0 = neither drift detection nor cache registration for new resource type.
+    pass_threshold: 0.7
+
+  - id: eval-r002-cg-008
+    round: 2
+    stage: code-generation
+    source_issue_ids: [PAT-012]
+    oape_command: api-implement
+    title: Status conditions updated for reconciliation sequence changes
+    prompt: >-
+      When generated code adds or removes reconciliation steps in an operand controller,
+      the status conditions must be updated accordingly. New steps must set appropriate
+      conditions on success and failure. Removed steps must not leave stale conditions
+      that corrupt the auto-Ready derivation.
+    assertions:
+      - type: code_pattern
+        criteria: >-
+          Each new reconciliation step must set a typed status condition via the status
+          manager on both success and failure paths. The condition name must follow the
+          operator's existing naming convention.
+      - type: test_coverage
+        criteria: >-
+          Unit tests must verify that status conditions are correctly set for new
+          reconciliation steps (success and failure paths) and that the auto-Ready
+          derivation produces the correct result with the updated condition set.
+    scoring:
+      weight: 0.8
+      rubric: >-
+        1.0 = status conditions updated for all changed reconciliation steps with tests;
+        0.5 = some status conditions updated but incomplete;
+        0.0 = no status condition updates for reconciliation sequence changes.
+    pass_threshold: 0.7

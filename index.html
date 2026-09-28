@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic SDLC Dashboard (OAP team)</title>
+<link rel="stylesheet" href="src/css/styles.css?v=6">
+<link rel="stylesheet" href="src/css/layered-architecture.css?v=8">
+<link rel="stylesheet" href="src/css/performance-metrics.css">
+<link rel="stylesheet" href="src/css/pipeline-flow2.css?v=6">
+<link rel="stylesheet" href="src/css/cve-tab.css?v=3">
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>Agentic SDLC Dashboard (OAP team)</h1>
+  
+    </div>
+  </div>
+  <div class="header-tabs">
+    <div class="tab-segment">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="cve">CVE</button>
+      <button class="tab-btn" data-tab="certmanager">Cert Manager</button>
+      <button class="tab-btn" data-tab="ztwim">ZTWIM</button>
+      <button class="tab-btn" data-tab="sscso">SSCSI</button>
+      <button class="tab-btn" data-tab="mustgather">Must Gather</button>
+      <button class="tab-btn" data-tab="eso">ESO</button>
+      <button class="tab-btn" data-tab="smc">SMC</button>
+      <button class="tab-btn" data-tab="linksrepos">Links and Repos</button>
+    </div>
+  </div>
+</div>
+
+<!-- Tab panels (content loaded dynamically from tabs/ directory) -->
+<div id="tab-overview" class="tab-panel active"></div>
+<div id="tab-cve" class="tab-panel"></div>
+<div id="tab-eso" class="tab-panel"></div>
+<div id="tab-mustgather" class="tab-panel"></div>
+<div id="tab-sscso" class="tab-panel"></div>
+<div id="tab-ztwim" class="tab-panel"></div>
+<div id="tab-smc" class="tab-panel"></div>
+<div id="tab-certmanager" class="tab-panel"></div>
+<div id="tab-linksrepos" class="tab-panel"></div>
+
+<button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">Back to Top</button>
+
+<div class="footer">
+  OpenSpec Dashboard | AI-Powered Operator Development
+</div>
+
+<script src="src/js/core/app.js?v=6"></script>
+</body>
+</html>

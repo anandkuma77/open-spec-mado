@@ -1,0 +1,673 @@
+      <!-- Performance & Metrics Summary -->
+      <div class="card-collapsible open">
+        <div class="card-collapsible-header" onclick="this.closest('.card-collapsible').classList.toggle('open')">
+          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path d="M7.293 4.707a1 1 0 011.414 0L14.414 10l-5.707 5.293a1 1 0 01-1.414-1.414L11.586 10 7.293 5.879a1 1 0 010-1.172z"/></svg>
+          <div><h3>Performance &amp; Metrics</h3><p class="section-sub">Model performance across pipeline phases and code generation</p></div>
+        </div>
+        <div class="card-collapsible-body">
+          <div class="card-collapsible-content">
+
+        <div class="metrics-group accent-purple">
+          <h4>Overall Report Quality and Code Generation *</h4>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Phase \ Model</th>
+                <th>Sonnet 5</th>
+                <th>Sonnet 4.5</th>
+                <th>Composer 2.5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Spec Validation</td>
+                <td><span class="score high">4.5</span></td>
+                <td><span class="score high">4.5</span></td>
+                <td><span class="score high">4.5</span></td>
+              </tr>
+              <tr>
+                <td>Planning</td>
+                <td><span class="score high">4.5</span></td>
+                <td><span class="score high">4.5</span></td>
+                <td><span class="score high">4.5</span></td>
+              </tr>
+              <tr>
+                <td>Tasks</td>
+                <td><span class="score low">3.0</span></td>
+                <td><span class="score mid">4.0</span></td>
+                <td><span class="score mid">4.0</span></td>
+              </tr>
+              <tr>
+                <td>Code-gen</td>
+                <td><span class="score low">3.5</span></td>
+                <td><span class="score mid">4.0</span></td>
+                <td><span class="score mid">4.0</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size:0.85em; color:var(--gray); margin-top:10px;">* All models perform well for spec validation and planning but for tasks and code generation, Sonnet 5 is inefficient due to higher number of tasks.</p>
+        </div>
+
+        <div class="metrics-group accent-teal">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+            <h4 style="margin:0;">Quantitative Performance for Code Generation (Across Tasks)</h4>
+            <div class="view-toggle" id="quantViewToggle">
+              <button class="view-toggle-btn active" data-view="table" onclick="toggleQuantView('table')">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg>
+              </button>
+              <button class="view-toggle-btn" data-view="chart" onclick="toggleQuantView('chart')">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="quantTableView">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Phase \ Model</th>
+                  <th>Sonnet 5</th>
+                  <th>Opus 4.6</th>
+                  <th>Composer 2.5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="https://redhat.atlassian.net/browse/CM-830" target="_blank">CM-830</a></td>
+                  <td><span class="score low">1,701,806</span></td>
+                  <td><span class="score low">1,732,589</span></td>
+                  <td><span class="score high">615,208</span></td>
+                </tr>
+                <tr>
+                  <td><a href="https://redhat.atlassian.net/browse/SSCSI-254" target="_blank">SSCSI-254</a></td>
+                  <td><span class="score low">592,695</span></td>
+                  <td><span class="score low">598,962</span></td>
+                  <td><span class="score high">214,261</span></td>
+                </tr>
+                <tr>
+                  <td><a href="https://redhat.atlassian.net/browse/SPIRE-359" target="_blank">SPIRE-359</a></td>
+                  <td><span class="score low">1,034,279</span></td>
+                  <td><span class="score low">1,152,367</span></td>
+                  <td><span class="score high">373,895</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="quantChartView" style="display:none;">
+            <div class="chart-type-tabs">
+              <button class="chart-type-btn active" onclick="switchChartType('barH',this)">Horizontal Bars</button>
+              <button class="chart-type-btn" onclick="switchChartType('barV',this)">Vertical Bars</button>
+              <button class="chart-type-btn" onclick="switchChartType('donut',this)">Donut</button>
+            </div>
+
+            <!-- Type A: Horizontal Bar Chart -->
+            <div class="chart-type-panel active" id="chartBarH">
+              <div class="chart-container">
+                <div class="chart-group">
+                  <div class="chart-group-label"><a href="https://redhat.atlassian.net/browse/CM-830" target="_blank">CM-830</a></div>
+                  <div class="chart-bars">
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Sonnet 5</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill sonnet5" style="width:98.2%"></div></div>
+                      <span class="chart-bar-value">1,701,806</span>
+                    </div>
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Opus 4.6</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill opus46" style="width:100%"></div></div>
+                      <span class="chart-bar-value">1,732,589</span>
+                    </div>
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Composer 2.5</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill composer25" style="width:35.5%"></div></div>
+                      <span class="chart-bar-value">615,208</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chart-group">
+                  <div class="chart-group-label"><a href="https://redhat.atlassian.net/browse/SSCSI-254" target="_blank">SSCSI-254</a></div>
+                  <div class="chart-bars">
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Sonnet 5</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill sonnet5" style="width:98.9%"></div></div>
+                      <span class="chart-bar-value">592,695</span>
+                    </div>
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Opus 4.6</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill opus46" style="width:100%"></div></div>
+                      <span class="chart-bar-value">598,962</span>
+                    </div>
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Composer 2.5</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill composer25" style="width:35.8%"></div></div>
+                      <span class="chart-bar-value">214,261</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="chart-group">
+                  <div class="chart-group-label"><a href="https://redhat.atlassian.net/browse/SPIRE-359" target="_blank">SPIRE-359</a></div>
+                  <div class="chart-bars">
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Sonnet 5</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill sonnet5" style="width:89.8%"></div></div>
+                      <span class="chart-bar-value">1,034,279</span>
+                    </div>
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Opus 4.6</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill opus46" style="width:100%"></div></div>
+                      <span class="chart-bar-value">1,152,367</span>
+                    </div>
+                    <div class="chart-bar-row">
+                      <span class="chart-bar-label">Composer 2.5</span>
+                      <div class="chart-bar-track"><div class="chart-bar-fill composer25" style="width:32.4%"></div></div>
+                      <span class="chart-bar-value">373,895</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Type B: Vertical Grouped Bar Chart -->
+            <div class="chart-type-panel" id="chartBarV">
+              <div class="vchart-wrapper">
+                <div class="vchart-y-axis">
+                  <span>1.8M</span><span>1.5M</span><span>1.2M</span><span>0.9M</span><span>0.6M</span><span>0.3M</span><span>0</span>
+                </div>
+                <div class="vchart-area">
+                  <div class="vchart-gridlines">
+                    <div class="vchart-gridline"></div>
+                    <div class="vchart-gridline"></div>
+                    <div class="vchart-gridline"></div>
+                    <div class="vchart-gridline"></div>
+                    <div class="vchart-gridline"></div>
+                    <div class="vchart-gridline"></div>
+                  </div>
+                  <div class="vchart-groups">
+                    <div class="vchart-group">
+                      <div class="vchart-bars">
+                        <div class="vchart-bar sonnet5" style="height:94.5%" title="Sonnet 5: 1,701,806"><span class="vchart-bar-val">1.70M</span></div>
+                        <div class="vchart-bar opus46" style="height:96.3%" title="Opus 4.6: 1,732,589"><span class="vchart-bar-val">1.73M</span></div>
+                        <div class="vchart-bar composer25" style="height:34.2%" title="Composer 2.5: 615,208"><span class="vchart-bar-val">0.62M</span></div>
+                      </div>
+                      <span class="vchart-label"><a href="https://redhat.atlassian.net/browse/CM-830" target="_blank">CM-830</a></span>
+                    </div>
+                    <div class="vchart-group">
+                      <div class="vchart-bars">
+                        <div class="vchart-bar sonnet5" style="height:32.9%" title="Sonnet 5: 592,695"><span class="vchart-bar-val">0.59M</span></div>
+                        <div class="vchart-bar opus46" style="height:33.3%" title="Opus 4.6: 598,962"><span class="vchart-bar-val">0.60M</span></div>
+                        <div class="vchart-bar composer25" style="height:11.9%" title="Composer 2.5: 214,261"><span class="vchart-bar-val">0.21M</span></div>
+                      </div>
+                      <span class="vchart-label"><a href="https://redhat.atlassian.net/browse/SSCSI-254" target="_blank">SSCSI-254</a></span>
+                    </div>
+                    <div class="vchart-group">
+                      <div class="vchart-bars">
+                        <div class="vchart-bar sonnet5" style="height:57.5%" title="Sonnet 5: 1,034,279"><span class="vchart-bar-val">1.03M</span></div>
+                        <div class="vchart-bar opus46" style="height:64.0%" title="Opus 4.6: 1,152,367"><span class="vchart-bar-val">1.15M</span></div>
+                        <div class="vchart-bar composer25" style="height:20.8%" title="Composer 2.5: 373,895"><span class="vchart-bar-val">0.37M</span></div>
+                      </div>
+                      <span class="vchart-label"><a href="https://redhat.atlassian.net/browse/SPIRE-359" target="_blank">SPIRE-359</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Type C: Donut Charts with Leader Lines -->
+            <div class="chart-type-panel" id="chartDonut">
+              <div class="donut-container">
+                <div class="donut-card-labeled">
+                  <div class="donut-title"><a href="https://redhat.atlassian.net/browse/CM-830" target="_blank">CM-830</a></div>
+                  <svg class="donut-labeled-svg" viewBox="0 0 340 170">
+                    <circle class="donut-ring" cx="145" cy="85" r="45"/>
+                    <circle class="donut-seg sonnet5" cx="145" cy="85" r="45" stroke-dasharray="119.1 282.7" stroke-dashoffset="70.7"/>
+                    <circle class="donut-seg opus46" cx="145" cy="85" r="45" stroke-dasharray="121.0 282.7" stroke-dashoffset="-48.4"/>
+                    <circle class="donut-seg composer25" cx="145" cy="85" r="45" stroke-dasharray="42.6 282.7" stroke-dashoffset="-169.4"/>
+                    <!-- Leader: Sonnet 5 (right) -->
+                    <polyline class="leader-line" points="197,69 212,62 232,62"/>
+                    <circle class="leader-dot" cx="197" cy="69" r="2.5"/>
+                    <text class="leader-text" x="235" y="58">Sonnet 5</text>
+                    <text class="leader-value" x="235" y="70">1,701,806</text>
+                    <!-- Leader: Opus 4.6 (bottom-left) -->
+                    <polyline class="leader-line" points="97,117 80,130 55,130"/>
+                    <circle class="leader-dot" cx="97" cy="117" r="2.5"/>
+                    <text class="leader-text" x="52" y="127" text-anchor="end">Opus 4.6</text>
+                    <text class="leader-value" x="52" y="139" text-anchor="end">1,732,589</text>
+                    <!-- Leader: Composer 2.5 (top-left) -->
+                    <polyline class="leader-line" points="117,42 102,28 55,28"/>
+                    <circle class="leader-dot" cx="117" cy="42" r="2.5"/>
+                    <text class="leader-text" x="52" y="24" text-anchor="end">Composer 2.5</text>
+                    <text class="leader-value" x="52" y="36" text-anchor="end">615,208</text>
+                    <!-- Center label -->
+                    <text class="donut-svg-center" x="145" y="83">4.05M</text>
+                    <text class="donut-svg-sub" x="145" y="96">tokens</text>
+                  </svg>
+                </div>
+                <div class="donut-card-labeled">
+                  <div class="donut-title"><a href="https://redhat.atlassian.net/browse/SSCSI-254" target="_blank">SSCSI-254</a></div>
+                  <svg class="donut-labeled-svg" viewBox="0 0 340 170">
+                    <circle class="donut-ring" cx="145" cy="85" r="45"/>
+                    <circle class="donut-seg sonnet5" cx="145" cy="85" r="45" stroke-dasharray="119.5 282.7" stroke-dashoffset="70.7"/>
+                    <circle class="donut-seg opus46" cx="145" cy="85" r="45" stroke-dasharray="120.6 282.7" stroke-dashoffset="-48.8"/>
+                    <circle class="donut-seg composer25" cx="145" cy="85" r="45" stroke-dasharray="42.6 282.7" stroke-dashoffset="-169.4"/>
+                    <!-- Leader: Sonnet 5 (right) -->
+                    <polyline class="leader-line" points="197,69 212,62 232,62"/>
+                    <circle class="leader-dot" cx="197" cy="69" r="2.5"/>
+                    <text class="leader-text" x="235" y="58">Sonnet 5</text>
+                    <text class="leader-value" x="235" y="70">592,695</text>
+                    <!-- Leader: Opus 4.6 (bottom-left) -->
+                    <polyline class="leader-line" points="97,117 80,130 55,130"/>
+                    <circle class="leader-dot" cx="97" cy="117" r="2.5"/>
+                    <text class="leader-text" x="52" y="127" text-anchor="end">Opus 4.6</text>
+                    <text class="leader-value" x="52" y="139" text-anchor="end">598,962</text>
+                    <!-- Leader: Composer 2.5 (top-left) -->
+                    <polyline class="leader-line" points="117,42 102,28 55,28"/>
+                    <circle class="leader-dot" cx="117" cy="42" r="2.5"/>
+                    <text class="leader-text" x="52" y="24" text-anchor="end">Composer 2.5</text>
+                    <text class="leader-value" x="52" y="36" text-anchor="end">214,261</text>
+                    <!-- Center label -->
+                    <text class="donut-svg-center" x="145" y="83">1.41M</text>
+                    <text class="donut-svg-sub" x="145" y="96">tokens</text>
+                  </svg>
+                </div>
+                <div class="donut-card-labeled">
+                  <div class="donut-title"><a href="https://redhat.atlassian.net/browse/SPIRE-359" target="_blank">SPIRE-359</a></div>
+                  <svg class="donut-labeled-svg" viewBox="0 0 340 170">
+                    <circle class="donut-ring" cx="145" cy="85" r="45"/>
+                    <circle class="donut-seg sonnet5" cx="145" cy="85" r="45" stroke-dasharray="114.4 282.7" stroke-dashoffset="70.7"/>
+                    <circle class="donut-seg opus46" cx="145" cy="85" r="45" stroke-dasharray="127.4 282.7" stroke-dashoffset="-43.7"/>
+                    <circle class="donut-seg composer25" cx="145" cy="85" r="45" stroke-dasharray="40.9 282.7" stroke-dashoffset="-171.1"/>
+                    <!-- Leader: Sonnet 5 (right) -->
+                    <polyline class="leader-line" points="195,66 210,58 232,58"/>
+                    <circle class="leader-dot" cx="195" cy="66" r="2.5"/>
+                    <text class="leader-text" x="235" y="54">Sonnet 5</text>
+                    <text class="leader-value" x="235" y="66">1,034,279</text>
+                    <!-- Leader: Opus 4.6 (bottom-left) -->
+                    <polyline class="leader-line" points="93,120 76,134 55,134"/>
+                    <circle class="leader-dot" cx="93" cy="120" r="2.5"/>
+                    <text class="leader-text" x="52" y="131" text-anchor="end">Opus 4.6</text>
+                    <text class="leader-value" x="52" y="143" text-anchor="end">1,152,367</text>
+                    <!-- Leader: Composer 2.5 (top-left) -->
+                    <polyline class="leader-line" points="115,40 100,26 55,26"/>
+                    <circle class="leader-dot" cx="115" cy="40" r="2.5"/>
+                    <text class="leader-text" x="52" y="22" text-anchor="end">Composer 2.5</text>
+                    <text class="leader-value" x="52" y="34" text-anchor="end">373,895</text>
+                    <!-- Center label -->
+                    <text class="donut-svg-center" x="145" y="83">2.56M</text>
+                    <text class="donut-svg-sub" x="145" y="96">tokens</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot sonnet5"></span> Sonnet 5</span>
+              <span class="legend-item"><span class="legend-dot opus46"></span> Opus 4.6</span>
+              <span class="legend-item"><span class="legend-dot composer25"></span> Composer 2.5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metrics-group accent-blue">
+          <h4>Epic-Calibrated Productivity Gains (% gain in time)</h4>
+
+          <!-- SSCSI Section -->
+          <div class="prod-epic-section">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin:14px 0 10px;">
+              <h5 style="margin:0; color:var(--dark);">SSCSI</h5>
+              <div class="view-toggle" id="sscsiViewToggle">
+                <button class="view-toggle-btn active" data-view="table" onclick="toggleEpicView('sscsi','table')">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg>
+                </button>
+                <button class="view-toggle-btn" data-view="chart" onclick="toggleEpicView('sscsi','chart')">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div id="sscsiTableView">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Phase \ Model</th>
+                    <th>Sonnet 5 / Opus 4.6</th>
+                    <th>Composer 2.5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Spec Validation</td>
+                    <td><span class="score high">60%</span></td>
+                    <td><span class="score high">60%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Planning report generation &amp; review</td>
+                    <td><span class="score mid">55%</span></td>
+                    <td><span class="score mid">50%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Tasks report generation &amp; review</td>
+                    <td><span class="score low">-30%</span></td>
+                    <td><span class="score low">-30%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Code generation &amp; review</td>
+                    <td><span class="score high">60%</span></td>
+                    <td><span class="score mid">55%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="font-size:0.82em; color:var(--gray); margin-top:6px;">* Tasks report: negative due to too many tasks generated by Sonnet 5.</p>
+            </div>
+            <div id="sscsiChartView" style="display:none;">
+              <div class="chart-type-tabs">
+                <button class="chart-type-btn active" onclick="switchEpicChart('sscsi','barH',this)">Horizontal Bars</button>
+                <button class="chart-type-btn" onclick="switchEpicChart('sscsi','barV',this)">Vertical Bars</button>
+                <button class="chart-type-btn" onclick="switchEpicChart('sscsi','donut',this)">Donut</button>
+              </div>
+              <div class="chart-type-panel active" id="sscsi-barH">
+                <div class="chart-container">
+                  <div class="chart-group">
+                    <div class="chart-group-label">Spec Validation</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model1" style="width:75%"></div></div><span class="chart-bar-value">60%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model2" style="width:75%"></div></div><span class="chart-bar-value">60%</span></div>
+                    </div>
+                  </div>
+                  <div class="chart-group">
+                    <div class="chart-group-label">Planning report generation &amp; review</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model1" style="width:68.75%"></div></div><span class="chart-bar-value">55%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model2" style="width:62.5%"></div></div><span class="chart-bar-value">50%</span></div>
+                    </div>
+                  </div>
+                  <div class="chart-group">
+                    <div class="chart-group-label">Tasks report generation &amp; review</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-negative" style="width:37.5%"></div></div><span class="chart-bar-value">-30%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-negative" style="width:37.5%"></div></div><span class="chart-bar-value">-30%</span></div>
+                    </div>
+                  </div>
+                  <div class="chart-group">
+                    <div class="chart-group-label">Code generation &amp; review</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model1" style="width:75%"></div></div><span class="chart-bar-value">60%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model2" style="width:68.75%"></div></div><span class="chart-bar-value">55%</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-type-panel" id="sscsi-barV">
+                <div class="vchart-wrapper">
+                  <div class="vchart-y-axis"><span>80%</span><span>60%</span><span>40%</span><span>20%</span><span>0</span><span>-20%</span><span>-40%</span></div>
+                  <div class="vchart-area">
+                    <div class="vchart-gridlines"><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline" style="border-bottom:1.5px solid #ccc;"></div><div class="vchart-gridline"></div></div>
+                    <div class="vchart-groups">
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-model1" style="height:75%"><span class="vchart-bar-val">60%</span></div><div class="vchart-bar prod-model2" style="height:75%"><span class="vchart-bar-val">60%</span></div></div><span class="vchart-label">Spec Valid.</span></div>
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-model1" style="height:68.75%"><span class="vchart-bar-val">55%</span></div><div class="vchart-bar prod-model2" style="height:62.5%"><span class="vchart-bar-val">50%</span></div></div><span class="vchart-label">Planning</span></div>
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-negative" style="height:37.5%"><span class="vchart-bar-val">-30%</span></div><div class="vchart-bar prod-negative" style="height:37.5%"><span class="vchart-bar-val">-30%</span></div></div><span class="vchart-label">Tasks</span></div>
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-model1" style="height:75%"><span class="vchart-bar-val">60%</span></div><div class="vchart-bar prod-model2" style="height:68.75%"><span class="vchart-bar-val">55%</span></div></div><span class="vchart-label">Code-gen</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-type-panel" id="sscsi-donut">
+                <div class="donut-container" style="justify-content:center;">
+                  <div class="donut-card-labeled">
+                    <svg class="donut-labeled-svg" viewBox="0 0 340 170">
+                      <circle class="donut-ring" cx="145" cy="85" r="45"/>
+                      <circle class="donut-seg prod-model1-stroke" cx="145" cy="85" r="45" stroke-dasharray="166.8 282.7" stroke-dashoffset="70.7"/>
+                      <circle class="donut-seg prod-model2-stroke" cx="145" cy="85" r="45" stroke-dasharray="115.9 282.7" stroke-dashoffset="-96.1"/>
+                      <polyline class="leader-line" points="195,62 212,54 232,54"/>
+                      <circle class="leader-dot" cx="195" cy="62" r="2.5"/>
+                      <text class="leader-text" x="235" y="50">Sonnet 5 / Opus 4.6</text>
+                      <text class="leader-value" x="235" y="62">+36.25% avg</text>
+                      <polyline class="leader-line" points="93,120 76,132 55,132"/>
+                      <circle class="leader-dot" cx="93" cy="120" r="2.5"/>
+                      <text class="leader-text" x="52" y="129" text-anchor="end">Composer 2.5</text>
+                      <text class="leader-value" x="52" y="141" text-anchor="end">+33.75% avg</text>
+                      <text class="donut-svg-center" x="145" y="83">+35%</text>
+                      <text class="donut-svg-sub" x="145" y="96">avg gain</text>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item"><span class="legend-dot prod-model1"></span> Sonnet 5 / Opus 4.6</span>
+                <span class="legend-item"><span class="legend-dot prod-model2"></span> Composer 2.5</span>
+                <span class="legend-item"><span class="legend-dot prod-negative"></span> Negative (time lost)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ZTWIM Section -->
+          <div class="prod-epic-section" style="margin-top:24px; padding-top:20px; border-top:1px solid #eef1f5;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <h5 style="margin:0; color:var(--dark);">ZTWIM</h5>
+              <div class="view-toggle" id="ztwimViewToggle">
+                <button class="view-toggle-btn active" data-view="table" onclick="toggleEpicView('ztwim','table')">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg>
+                </button>
+                <button class="view-toggle-btn" data-view="chart" onclick="toggleEpicView('ztwim','chart')">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div id="ztwimTableView">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Phase \ Model</th>
+                    <th>Sonnet 5 / Opus 4.6</th>
+                    <th>Composer 2.5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Spec Validation</td>
+                    <td><span class="score high">80%</span></td>
+                    <td><span class="score high">80%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Planning report generation &amp; review</td>
+                    <td><span class="score high">60%</span></td>
+                    <td><span class="score high">60%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Tasks report generation &amp; review</td>
+                    <td><span class="score low">-20%</span></td>
+                    <td><span class="score low">-10%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="ztwimChartView" style="display:none;">
+              <div class="chart-type-tabs">
+                <button class="chart-type-btn active" onclick="switchEpicChart('ztwim','barH',this)">Horizontal Bars</button>
+                <button class="chart-type-btn" onclick="switchEpicChart('ztwim','barV',this)">Vertical Bars</button>
+                <button class="chart-type-btn" onclick="switchEpicChart('ztwim','donut',this)">Donut</button>
+              </div>
+              <div class="chart-type-panel active" id="ztwim-barH">
+                <div class="chart-container">
+                  <div class="chart-group">
+                    <div class="chart-group-label">Spec Validation</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model1" style="width:100%"></div></div><span class="chart-bar-value">80%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model2" style="width:100%"></div></div><span class="chart-bar-value">80%</span></div>
+                    </div>
+                  </div>
+                  <div class="chart-group">
+                    <div class="chart-group-label">Planning report generation &amp; review</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model1" style="width:75%"></div></div><span class="chart-bar-value">60%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model2" style="width:75%"></div></div><span class="chart-bar-value">60%</span></div>
+                    </div>
+                  </div>
+                  <div class="chart-group">
+                    <div class="chart-group-label">Tasks report generation &amp; review</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-negative" style="width:25%"></div></div><span class="chart-bar-value">-20%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-negative" style="width:12.5%"></div></div><span class="chart-bar-value">-10%</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-type-panel" id="ztwim-barV">
+                <div class="vchart-wrapper">
+                  <div class="vchart-y-axis"><span>80%</span><span>60%</span><span>40%</span><span>20%</span><span>0</span><span>-20%</span><span>-40%</span></div>
+                  <div class="vchart-area">
+                    <div class="vchart-gridlines"><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline" style="border-bottom:1.5px solid #ccc;"></div><div class="vchart-gridline"></div></div>
+                    <div class="vchart-groups">
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-model1" style="height:100%"><span class="vchart-bar-val">80%</span></div><div class="vchart-bar prod-model2" style="height:100%"><span class="vchart-bar-val">80%</span></div></div><span class="vchart-label">Spec Valid.</span></div>
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-model1" style="height:75%"><span class="vchart-bar-val">60%</span></div><div class="vchart-bar prod-model2" style="height:75%"><span class="vchart-bar-val">60%</span></div></div><span class="vchart-label">Planning</span></div>
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-negative" style="height:25%"><span class="vchart-bar-val">-20%</span></div><div class="vchart-bar prod-negative" style="height:12.5%"><span class="vchart-bar-val">-10%</span></div></div><span class="vchart-label">Tasks</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-type-panel" id="ztwim-donut">
+                <div class="donut-container" style="justify-content:center;">
+                  <div class="donut-card-labeled">
+                    <svg class="donut-labeled-svg" viewBox="0 0 340 170">
+                      <circle class="donut-ring" cx="145" cy="85" r="45"/>
+                      <circle class="donut-seg prod-model1-stroke" cx="145" cy="85" r="45" stroke-dasharray="169.6 282.7" stroke-dashoffset="70.7"/>
+                      <circle class="donut-seg prod-model2-stroke" cx="145" cy="85" r="45" stroke-dasharray="113.1 282.7" stroke-dashoffset="-98.9"/>
+                      <polyline class="leader-line" points="195,62 212,54 232,54"/>
+                      <circle class="leader-dot" cx="195" cy="62" r="2.5"/>
+                      <text class="leader-text" x="235" y="50">Sonnet 5 / Opus 4.6</text>
+                      <text class="leader-value" x="235" y="62">+40% avg</text>
+                      <polyline class="leader-line" points="93,120 76,132 55,132"/>
+                      <circle class="leader-dot" cx="93" cy="120" r="2.5"/>
+                      <text class="leader-text" x="52" y="129" text-anchor="end">Composer 2.5</text>
+                      <text class="leader-value" x="52" y="141" text-anchor="end">+43.3% avg</text>
+                      <text class="donut-svg-center" x="145" y="83">+41.7%</text>
+                      <text class="donut-svg-sub" x="145" y="96">avg gain</text>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item"><span class="legend-dot prod-model1"></span> Sonnet 5 / Opus 4.6</span>
+                <span class="legend-item"><span class="legend-dot prod-model2"></span> Composer 2.5</span>
+                <span class="legend-item"><span class="legend-dot prod-negative"></span> Negative (time lost)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- SMC Section -->
+          <div class="prod-epic-section" style="margin-top:24px; padding-top:20px; border-top:1px solid #eef1f5;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <h5 style="margin:0; color:var(--dark);">SMC</h5>
+              <div class="view-toggle" id="smcViewToggle">
+                <button class="view-toggle-btn active" data-view="table" onclick="toggleEpicView('smc','table')">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg>
+                </button>
+                <button class="view-toggle-btn" data-view="chart" onclick="toggleEpicView('smc','chart')">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div id="smcTableView">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Phase \ Model</th>
+                    <th>Sonnet 5 / Opus 4.6</th>
+                    <th>Composer 2.5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Spec Validation</td>
+                    <td><span class="score high">70%</span></td>
+                    <td><span class="score high">75%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Planning report generation &amp; review</td>
+                    <td><span class="score high">55%</span></td>
+                    <td><span class="score high">60%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Tasks report generation &amp; review</td>
+                    <td><span class="score low">-15%</span></td>
+                    <td><span class="score low">-10%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="smcChartView" style="display:none;">
+              <div class="chart-type-tabs">
+                <button class="chart-type-btn active" onclick="switchEpicChart('smc','barH',this)">Horizontal Bars</button>
+                <button class="chart-type-btn" onclick="switchEpicChart('smc','barV',this)">Vertical Bars</button>
+                <button class="chart-type-btn" onclick="switchEpicChart('smc','donut',this)">Donut</button>
+              </div>
+              <div class="chart-type-panel active" id="smc-barH">
+                <div class="chart-container">
+                  <div class="chart-group">
+                    <div class="chart-group-label">Spec Validation</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model1" style="width:87.5%"></div></div><span class="chart-bar-value">70%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model2" style="width:93.75%"></div></div><span class="chart-bar-value">75%</span></div>
+                    </div>
+                  </div>
+                  <div class="chart-group">
+                    <div class="chart-group-label">Planning report generation &amp; review</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model1" style="width:68.75%"></div></div><span class="chart-bar-value">55%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-model2" style="width:75%"></div></div><span class="chart-bar-value">60%</span></div>
+                    </div>
+                  </div>
+                  <div class="chart-group">
+                    <div class="chart-group-label">Tasks report generation &amp; review</div>
+                    <div class="chart-bars">
+                      <div class="chart-bar-row"><span class="chart-bar-label">Sonnet 5 / Opus 4.6</span><div class="chart-bar-track"><div class="chart-bar-fill prod-negative" style="width:18.75%"></div></div><span class="chart-bar-value">-15%</span></div>
+                      <div class="chart-bar-row"><span class="chart-bar-label">Composer 2.5</span><div class="chart-bar-track"><div class="chart-bar-fill prod-negative" style="width:12.5%"></div></div><span class="chart-bar-value">-10%</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-type-panel" id="smc-barV">
+                <div class="vchart-wrapper">
+                  <div class="vchart-y-axis"><span>80%</span><span>60%</span><span>40%</span><span>20%</span><span>0</span><span>-20%</span><span>-40%</span></div>
+                  <div class="vchart-area">
+                    <div class="vchart-gridlines"><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline" style="border-bottom:1.5px solid #ccc;"></div><div class="vchart-gridline"></div></div>
+                    <div class="vchart-groups">
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-model1" style="height:87.5%"><span class="vchart-bar-val">70%</span></div><div class="vchart-bar prod-model2" style="height:93.75%"><span class="vchart-bar-val">75%</span></div></div><span class="vchart-label">Spec Valid.</span></div>
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-model1" style="height:68.75%"><span class="vchart-bar-val">55%</span></div><div class="vchart-bar prod-model2" style="height:75%"><span class="vchart-bar-val">60%</span></div></div><span class="vchart-label">Planning</span></div>
+                      <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar prod-negative" style="height:18.75%"><span class="vchart-bar-val">-15%</span></div><div class="vchart-bar prod-negative" style="height:12.5%"><span class="vchart-bar-val">-10%</span></div></div><span class="vchart-label">Tasks</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-type-panel" id="smc-donut">
+                <div class="donut-container" style="justify-content:center;">
+                  <div class="donut-card-labeled">
+                    <svg class="donut-labeled-svg" viewBox="0 0 340 170">
+                      <circle class="donut-ring" cx="145" cy="85" r="45"/>
+                      <circle class="donut-seg prod-model1-stroke" cx="145" cy="85" r="45" stroke-dasharray="148.4 282.7" stroke-dashoffset="70.7"/>
+                      <circle class="donut-seg prod-model2-stroke" cx="145" cy="85" r="45" stroke-dasharray="134.3 282.7" stroke-dashoffset="-77.7"/>
+                      <polyline class="leader-line" points="195,62 212,54 232,54"/>
+                      <circle class="leader-dot" cx="195" cy="62" r="2.5"/>
+                      <text class="leader-text" x="235" y="50">Sonnet 5 / Opus 4.6</text>
+                      <text class="leader-value" x="235" y="62">+36.7% avg</text>
+                      <polyline class="leader-line" points="93,120 76,132 55,132"/>
+                      <circle class="leader-dot" cx="93" cy="120" r="2.5"/>
+                      <text class="leader-text" x="52" y="129" text-anchor="end">Composer 2.5</text>
+                      <text class="leader-value" x="52" y="141" text-anchor="end">+41.7% avg</text>
+                      <text class="donut-svg-center" x="145" y="83">+39.2%</text>
+                      <text class="donut-svg-sub" x="145" y="96">avg gain</text>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item"><span class="legend-dot prod-model1"></span> Sonnet 5 / Opus 4.6</span>
+                <span class="legend-item"><span class="legend-dot prod-model2"></span> Composer 2.5</span>
+                <span class="legend-item"><span class="legend-dot prod-negative"></span> Negative (time lost)</span>
+              </div>
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+      </div>

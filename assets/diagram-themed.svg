@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="620" fill="white" rx="12"/>
+
+  <!-- Step 1: Historical Epics (blue pentagon) -->
+  <polygon points="480,18 600,48 600,108 360,108 360,48" fill="#2980b9" rx="8"/>
+  <rect x="360" y="44" width="240" height="68" fill="#2980b9" rx="8"/>
+  <text x="480" y="72" text-anchor="middle" fill="white" font-size="14" font-weight="600">Historical Epic's,</text>
+  <text x="480" y="92" text-anchor="middle" fill="white" font-size="14" font-weight="600">dev PRs, bugs, testcases</text>
+
+  <!-- Arrow 1 -->
+  <line x1="480" y1="112" x2="480" y2="148" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="480,156 474,146 486,146" fill="#95a5a6"/>
+
+  <!-- Step 2: Evals derivation (gray) -->
+  <rect x="310" y="158" width="340" height="56" rx="10" fill="#ecf0f1" filter="url(#shadow)"/>
+  <text x="480" y="182" text-anchor="middle" fill="#2c3e50" font-size="14" font-weight="600">Evals derivation for</text>
+  <text x="480" y="200" text-anchor="middle" fill="#2c3e50" font-size="14" font-weight="600">automated agentic flow</text>
+
+  <!-- Arrow 2 -->
+  <line x1="480" y1="214" x2="480" y2="250" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="480,258 474,248 486,248" fill="#95a5a6"/>
+
+  <!-- Pipeline container -->
+  <rect x="40" y="260" width="880" height="100" rx="14" fill="white" stroke="#dce1e6" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Jira (blue - first step) -->
+  <rect x="62" y="284" width="90" height="50" rx="8" fill="#2980b9"/>
+  <text x="107" y="314" text-anchor="middle" fill="white" font-size="14" font-weight="600">Jira</text>
+
+  <!-- Arrow -->
+  <line x1="156" y1="309" x2="182" y2="309" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="188,309 180,303 180,315" fill="#95a5a6"/>
+
+  <!-- Spec validation (gray) -->
+  <rect x="192" y="284" width="130" height="50" rx="8" fill="#ecf0f1"/>
+  <text x="257" y="314" text-anchor="middle" fill="#2c3e50" font-size="13" font-weight="600">Spec validation</text>
+
+  <!-- Arrow -->
+  <line x1="326" y1="309" x2="346" y2="309" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="352,309 344,303 344,315" fill="#95a5a6"/>
+
+  <!-- Repo assessment (gray) -->
+  <rect x="356" y="284" width="150" height="50" rx="8" fill="#ecf0f1"/>
+  <text x="431" y="304" text-anchor="middle" fill="#2c3e50" font-size="12" font-weight="600">Repo assessment for</text>
+  <text x="431" y="322" text-anchor="middle" fill="#2c3e50" font-size="12" font-weight="600">the given Epic</text>
+
+  <!-- Arrow -->
+  <line x1="510" y1="309" x2="536" y2="309" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="542,309 534,303 534,315" fill="#95a5a6"/>
+
+  <!-- Planning (gray) -->
+  <rect x="546" y="284" width="110" height="50" rx="8" fill="#ecf0f1"/>
+  <text x="601" y="314" text-anchor="middle" fill="#2c3e50" font-size="14" font-weight="600">Planning</text>
+
+  <!-- Arrow -->
+  <line x1="660" y1="309" x2="686" y2="309" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="692,309 684,303 684,315" fill="#95a5a6"/>
+
+  <!-- Tasks (gray) -->
+  <rect x="696" y="284" width="90" height="50" rx="8" fill="#ecf0f1"/>
+  <text x="741" y="314" text-anchor="middle" fill="#2c3e50" font-size="14" font-weight="600">Tasks</text>
+
+  <!-- Arrow -->
+  <line x1="790" y1="309" x2="816" y2="309" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="822,309 814,303 814,315" fill="#95a5a6"/>
+
+  <!-- Code gen (blue - last pipeline step) -->
+  <rect x="826" y="284" width="90" height="50" rx="8" fill="#2980b9"/>
+  <text x="871" y="314" text-anchor="middle" fill="white" font-size="14" font-weight="600">Code gen</text>
+
+  <!-- Arrow 3 (pointing upward into pipeline) -->
+  <line x1="480" y1="406" x2="480" y2="368" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="480,360 474,370 486,370" fill="#95a5a6"/>
+
+  <!-- agents md and contextualization (gray) -->
+  <rect x="310" y="406" width="340" height="56" rx="10" fill="#ecf0f1" filter="url(#shadow)"/>
+  <text x="480" y="430" text-anchor="middle" fill="#2c3e50" font-size="14" font-weight="600">agents md and</text>
+  <text x="480" y="448" text-anchor="middle" fill="#2c3e50" font-size="14" font-weight="600">contextualization</text>
+
+  <!-- Arrow 4 (pointing upward) -->
+  <line x1="480" y1="508" x2="480" y2="470" stroke="#95a5a6" stroke-width="2"/>
+  <polygon points="480,462 474,472 486,472" fill="#95a5a6"/>
+
+  <!-- ai-helpers agentic docs (blue - last step) -->
+  <rect x="280" y="508" width="400" height="64" rx="10" fill="#2980b9" filter="url(#shadow)"/>
+  <rect x="288" y="516" width="384" height="48" rx="7" fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="480" y="546" text-anchor="middle" fill="white" font-size="16" font-weight="700">ai-helpers agentic docs</text>
+</svg>

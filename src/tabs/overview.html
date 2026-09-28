@@ -1,0 +1,544 @@
+  <div class="section">
+
+    <h2>Goals</h2>
+    <p class="section-sub">Key objectives driving the agentic SDLC initiative</p>
+
+      <!-- Goals -->
+      <div class="card" style="border-left:5px solid #2980b9; box-shadow:0 4px 20px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(41,128,185,0.08);">
+        <p style="margin:8px 0 0 0; font-size:0.95em; color:#2c3e50; font-weight:600;">Improve Velocity and delivery time KPIs by:</p>
+        <div style="display:flex; flex-direction:column; gap:16px; margin-top:16px;">
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="min-width:44px; height:44px; background:linear-gradient(135deg,#2980b9,#3498db); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1em; font-weight:800; color:#fff; box-shadow:0 3px 8px rgba(41,128,185,0.3);">1</div>
+            <div>
+              <h4 style="margin:0 0 4px 0; color:#2c3e50; font-size:0.95em;">Accelerate Earliest Adoption</h4>
+              <p style="margin:0; font-size:0.88em; color:#5d6d7e; line-height:1.5;">Deliver a minimal, tool-agnostic (orchestration/model/sandbox), production-safe agentic flow for operator teams on real work, without waiting for full platform maturity.</p>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="min-width:44px; height:44px; background:linear-gradient(135deg,#2980b9,#3498db); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1em; font-weight:800; color:#fff; box-shadow:0 3px 8px rgba(41,128,185,0.3);">2</div>
+            <div>
+              <h4 style="margin:0 0 4px 0; color:#2c3e50; font-size:0.95em;">Serve Every SDLC Persona</h4>
+              <p style="margin:0; font-size:0.88em; color:#5d6d7e; line-height:1.5;">Structure the flow so SEs, SSEs, and Architects each have explicit gates, artifacts, and approval points aligned to their responsibilities.</p>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="min-width:44px; height:44px; background:linear-gradient(135deg,#2980b9,#3498db); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1em; font-weight:800; color:#fff; box-shadow:0 3px 8px rgba(41,128,185,0.3);">3</div>
+            <div>
+              <h4 style="margin:0 0 4px 0; color:#2c3e50; font-size:0.95em;">Shift Quality Left</h4>
+              <p style="margin:0; font-size:0.88em; color:#5d6d7e; line-height:1.5;">Use planning-stage reviews and human gates to surface bugs, design flaws, and scope risks before code generation begins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div style="margin-top:40px;"></div>
+    <h2>Overview</h2>
+    <p class="section-sub">Project overview and summary</p>
+
+      <!-- Operator Status & Development Patterns -->
+      <div class="card">
+        <h3>Operator Status &amp; Development Patterns</h3>
+        <p class="section-sub">Onboarding, release readiness, and development progress across operators</p>
+
+        <table class="tbl" style="table-layout:fixed;">
+          <colgroup>
+            <col style="width:16%">
+            <col style="width:14%">
+            <col style="width:14%">
+            <col style="width:14%">
+            <col style="width:14%">
+            <col style="width:14%">
+            <col style="width:14%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th style="background:linear-gradient(135deg, #1a5276 0%, #2980b9 100%);">Operator</th>
+              <th style="background:linear-gradient(135deg, #1a5276 0%, #2980b9 100%);">On-Boarded</th>
+              <th style="background:linear-gradient(135deg, #1a5276 0%, #2980b9 100%);">RFE</th>
+              <th style="background:linear-gradient(135deg, #1a5276 0%, #2980b9 100%);">Development</th>
+              <th style="background:linear-gradient(135deg, #1a5276 0%, #2980b9 100%);">Unit Tests</th>
+              <th style="background:linear-gradient(135deg, #1a5276 0%, #2980b9 100%);">QE E2E</th>
+              <th style="background:linear-gradient(135deg, #1a5276 0%, #2980b9 100%);">Bug Fix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#" onclick="switchTab('certmanager'); return false;">Cert Manager</a></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge orange">WIP</span></td>
+              <td><span class="badge orange">WIP</span></td>
+            </tr>
+            <tr>
+              <td><a href="#" onclick="switchTab('ztwim'); return false;">ZTWIM</a></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge orange">WIP</span></td>
+              <td><span class="badge orange">WIP</span></td>
+            </tr>
+            <tr>
+              <td><a href="#" onclick="switchTab('sscso'); return false;">SSCSI</a></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge orange">WIP</span></td>
+              <td><span class="badge orange">WIP</span></td>
+            </tr>
+            <tr>
+              <td><a href="#" onclick="switchTab('mustgather'); return false;">Must Gather</a></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge orange">WIP</span></td>
+              <td><span class="badge orange">WIP</span></td>
+            </tr>
+            <tr>
+              <td><a href="#" onclick="switchTab('eso'); return false;">ESO</a></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge orange">WIP</span></td>
+              <td><span class="badge orange">WIP</span></td>
+            </tr>
+            <tr>
+              <td><a href="#" onclick="switchTab('smc'); return false;">SMC</a></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge green">Green</span></td>
+              <td><span class="badge orange">WIP</span></td>
+              <td><span class="badge orange">WIP</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Overall Progress -->
+        <div style="margin-top:24px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <span style="font-size:0.9em; font-weight:700; color:#2c3e50;">Overall Progress</span>
+            <span style="font-size:0.9em; font-weight:700; color:#2c3e50;">5 / 7 phases complete across all operators</span>
+          </div>
+          <div style="width:100%; height:32px; background:#eef1f5; border-radius:10px; overflow:hidden; position:relative; box-shadow:inset 0 2px 4px rgba(0,0,0,0.06); display:flex;">
+            <div style="width:67%; height:100%; background:linear-gradient(90deg,#27ae60,#2ecc71); display:flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:800; color:#fff;">67%</div>
+            <div style="width:33%; height:100%; background:linear-gradient(90deg,#e67e22,#f39c12); display:flex; align-items:center; justify-content:center; font-size:0.85em; font-weight:800; color:#fff;">33%</div>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-top:6px; font-size:0.78em; color:#95a5a6;">
+            <span>On-Boarded &bull; RFE &bull; Development &bull; Unit Tests</span>
+            <span style="color:#f39c12; font-weight:600;">QE E2E &bull; Bug Fix &mdash; WIP</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tools for Layered Architecture (loaded from layered-architecture.html) -->
+      <div id="layeredArchitectureContainer"></div>
+
+      <!-- Agentic Pipeline Flow -->
+      <div class="card-collapsible">
+        <div class="card-collapsible-header" onclick="this.closest('.card-collapsible').classList.toggle('open')">
+          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path d="M7.293 4.707a1 1 0 011.414 0L14.414 10l-5.707 5.293a1 1 0 01-1.414-1.414L11.586 10 7.293 5.879a1 1 0 010-1.172z"/></svg>
+          <div><h3>Agentic Pipeline Flow</h3><p class="section-sub">Enhanced agentic workflow with advanced orchestration and feedback loops</p></div>
+        </div>
+        <div class="card-collapsible-body">
+          <div class="card-collapsible-content" id="pf2Container"></div>
+          <div class="pf2-tab-links">
+            <span class="pf2-tab-links-label">View operator results:</span>
+            <a href="#" onclick="switchTab('ztwim'); return false;" class="pf2-tab-link">ZTWIM</a>
+            <a href="#" onclick="switchTab('sscso'); return false;" class="pf2-tab-link">SSCSI</a>
+            <a href="#" onclick="switchTab('smc'); return false;" class="pf2-tab-link">SMC</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance & Metrics Summary -->
+      <div id="performanceMetrics" class="card-collapsible">
+        <div class="card-collapsible-header" onclick="this.closest('.card-collapsible').classList.toggle('open')">
+          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path d="M7.293 4.707a1 1 0 011.414 0L14.414 10l-5.707 5.293a1 1 0 01-1.414-1.414L11.586 10 7.293 5.879a1 1 0 010-1.172z"/></svg>
+          <div><h3>Performance &amp; Metrics</h3><p class="section-sub">Model performance across pipeline phases and code generation</p></div>
+        </div>
+        <div class="card-collapsible-body">
+          <div class="card-collapsible-content">
+
+        <div class="metrics-group accent-purple">
+          <h4>Harness engineering document prep — contribution by approach</h4>
+          <div class="hchart">
+            <div class="hchart-body">
+              <div class="hchart-gridlines">
+                <div class="hchart-gridline"></div>
+                <div class="hchart-gridline"></div>
+                <div class="hchart-gridline"></div>
+              </div>
+              <div class="hchart-rows">
+                <div class="hchart-row">
+                  <span class="hchart-label" title="Ai-helpers agentic docs">Ai-helpers agentic docs</span>
+                  <div class="hchart-plot"><div class="hchart-bar composer25" style="width:100%"><span class="hchart-bar-val">40%</span></div></div>
+                </div>
+                <div class="hchart-row">
+                  <span class="hchart-label" title="Cursor">Cursor</span>
+                  <div class="hchart-plot"><div class="hchart-bar opus46" style="width:75%"><span class="hchart-bar-val">30%</span></div></div>
+                </div>
+                <div class="hchart-row">
+                  <span class="hchart-label" title="Manual">Manual</span>
+                  <div class="hchart-plot"><div class="hchart-bar sonnet5" style="width:75%"><span class="hchart-bar-val">30%</span></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="hchart-x-axis">
+              <span>0%</span>
+              <span>20%</span>
+              <span>40%</span>
+            </div>
+          </div>
+          <p style="font-size:0.85em; color:var(--gray); margin-top:10px;">Note: ai-helpers agentic docs contributed the Semantics and Structure while Cursor and Operator team refined the content in iteration</p>
+        </div>
+
+        <div class="metrics-group accent-purple">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+            <h4 style="margin:0;">Overall Report Quality and Code Generation</h4>
+            <div class="view-toggle" id="qualityViewToggle">
+              <button class="view-toggle-btn" data-view="table" onclick="toggleEpicView('quality','table')"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg></button>
+              <button class="view-toggle-btn active" data-view="chart" onclick="toggleEpicView('quality','chart')"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg></button>
+            </div>
+          </div>
+          <div id="qualityTableView" style="display:none;">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Phase \ Model</th>
+                  <th>Sonnet 5</th>
+                  <th>Sonnet 4.5</th>
+                  <th>Composer 2.5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Spec Validation</td>
+                  <td><span class="score high">4.5</span></td>
+                  <td><span class="score high">4.5</span></td>
+                  <td><span class="score high">4.5</span></td>
+                </tr>
+                <tr>
+                  <td>Planning</td>
+                  <td><span class="score high">4.5</span></td>
+                  <td><span class="score high">4.5</span></td>
+                  <td><span class="score high">4.5</span></td>
+                </tr>
+                <tr>
+                  <td>Tasks</td>
+                  <td><span class="score low">3.0</span></td>
+                  <td><span class="score mid">4.0</span></td>
+                  <td><span class="score mid">4.0</span></td>
+                </tr>
+                <tr>
+                  <td>Code-gen</td>
+                  <td><span class="score low">3.5</span></td>
+                  <td><span class="score mid">4.0</span></td>
+                  <td><span class="score mid">4.0</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.85em; color:var(--gray); margin-top:10px;">Note: All models perform well for spec validation and planning but for tasks and code generation, Sonnet 5 is inefficient due to higher number of tasks.</p>
+          </div>
+          <div id="qualityChartView">
+            <div class="vchart-wrapper">
+              <div class="vchart-y-axis"><span>5.0</span><span>4.0</span><span>3.0</span><span>2.0</span><span>1.0</span><span>0</span></div>
+              <div class="vchart-area">
+                <div class="vchart-gridlines"><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div></div>
+                <div class="vchart-groups">
+                  <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar sonnet5" style="height:90%" title="Sonnet 5: 4.5"><span class="vchart-bar-val">4.5</span></div><div class="vchart-bar opus46" style="height:90%" title="Sonnet 4.5: 4.5"><span class="vchart-bar-val">4.5</span></div><div class="vchart-bar composer25" style="height:90%" title="Composer 2.5: 4.5"><span class="vchart-bar-val">4.5</span></div></div><span class="vchart-label">Spec Valid.</span></div>
+                  <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar sonnet5" style="height:90%" title="Sonnet 5: 4.5"><span class="vchart-bar-val">4.5</span></div><div class="vchart-bar opus46" style="height:90%" title="Sonnet 4.5: 4.5"><span class="vchart-bar-val">4.5</span></div><div class="vchart-bar composer25" style="height:90%" title="Composer 2.5: 4.5"><span class="vchart-bar-val">4.5</span></div></div><span class="vchart-label">Planning</span></div>
+                  <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar sonnet5" style="height:60%" title="Sonnet 5: 3.0"><span class="vchart-bar-val">3.0</span></div><div class="vchart-bar opus46" style="height:80%" title="Sonnet 4.5: 4.0"><span class="vchart-bar-val">4.0</span></div><div class="vchart-bar composer25" style="height:80%" title="Composer 2.5: 4.0"><span class="vchart-bar-val">4.0</span></div></div><span class="vchart-label">Tasks</span></div>
+                  <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar sonnet5" style="height:70%" title="Sonnet 5: 3.5"><span class="vchart-bar-val">3.5</span></div><div class="vchart-bar opus46" style="height:80%" title="Sonnet 4.5: 4.0"><span class="vchart-bar-val">4.0</span></div><div class="vchart-bar composer25" style="height:80%" title="Composer 2.5: 4.0"><span class="vchart-bar-val">4.0</span></div></div><span class="vchart-label">Code-gen</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot sonnet5"></span> Sonnet 5</span>
+              <span class="legend-item"><span class="legend-dot opus46"></span> Sonnet 4.5</span>
+              <span class="legend-item"><span class="legend-dot composer25"></span> Composer 2.5</span>
+            </div>
+            <p style="font-size:0.85em; color:var(--gray); margin-top:10px;">Note: All models perform well for spec validation and planning but for tasks and code generation, Sonnet 5 is inefficient due to higher number of tasks.</p>
+          </div>
+        </div>
+
+        <div class="metrics-group accent-teal">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+            <h4 style="margin:0;">Quantitative Performance for Code Generation (Across Tasks)</h4>
+            <div class="view-toggle" id="quantViewToggle">
+              <button class="view-toggle-btn" data-view="table" onclick="toggleQuantView('table')">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg>
+              </button>
+              <button class="view-toggle-btn active" data-view="chart" onclick="toggleQuantView('chart')">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="quantTableView" style="display:none;">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Phase \ Model</th>
+                  <th>Sonnet 5</th>
+                  <th>Opus 4.6</th>
+                  <th>Composer 2.5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="https://redhat.atlassian.net/browse/CM-830" target="_blank">CM-830</a></td>
+                  <td><span class="score low">1,701,806</span></td>
+                  <td><span class="score low">1,732,589</span></td>
+                  <td><span class="score high">615,208</span></td>
+                </tr>
+                <tr>
+                  <td><a href="https://redhat.atlassian.net/browse/SSCSI-254" target="_blank">SSCSI-254</a></td>
+                  <td><span class="score low">592,695</span></td>
+                  <td><span class="score low">598,962</span></td>
+                  <td><span class="score high">214,261</span></td>
+                </tr>
+                <tr>
+                  <td><a href="https://redhat.atlassian.net/browse/SPIRE-359" target="_blank">SPIRE-359</a></td>
+                  <td><span class="score low">1,034,279</span></td>
+                  <td><span class="score low">1,152,367</span></td>
+                  <td><span class="score high">373,895</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="quantChartView">
+            <div class="vchart-wrapper">
+              <div class="vchart-y-axis"><span>1.8M</span><span>1.5M</span><span>1.2M</span><span>0.9M</span><span>0.6M</span><span>0.3M</span><span>0</span></div>
+              <div class="vchart-area">
+                <div class="vchart-gridlines"><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div></div>
+                <div class="vchart-groups">
+                  <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar opus46" style="height:94.5%" title="Sonnet 5: 1,701,806"><span class="vchart-bar-val">1.70M</span></div><div class="vchart-bar composer25" style="height:96.3%" title="Opus 4.6: 1,732,589"><span class="vchart-bar-val">1.73M</span></div><div class="vchart-bar sonnet5" style="height:34.2%" title="Composer 2.5: 615,208"><span class="vchart-bar-val">0.62M</span></div></div><span class="vchart-label"><a href="https://redhat.atlassian.net/browse/CM-830" target="_blank">CM-830</a></span></div>
+                  <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar opus46" style="height:32.9%" title="Sonnet 5: 592,695"><span class="vchart-bar-val">0.59M</span></div><div class="vchart-bar composer25" style="height:33.3%" title="Opus 4.6: 598,962"><span class="vchart-bar-val">0.60M</span></div><div class="vchart-bar sonnet5" style="height:11.9%" title="Composer 2.5: 214,261"><span class="vchart-bar-val">0.21M</span></div></div><span class="vchart-label"><a href="https://redhat.atlassian.net/browse/SSCSI-254" target="_blank">SSCSI-254</a></span></div>
+                  <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar opus46" style="height:57.5%" title="Sonnet 5: 1,034,279"><span class="vchart-bar-val">1.03M</span></div><div class="vchart-bar composer25" style="height:64.0%" title="Opus 4.6: 1,152,367"><span class="vchart-bar-val">1.15M</span></div><div class="vchart-bar sonnet5" style="height:20.8%" title="Composer 2.5: 373,895"><span class="vchart-bar-val">0.37M</span></div></div><span class="vchart-label"><a href="https://redhat.atlassian.net/browse/SPIRE-359" target="_blank">SPIRE-359</a></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-dot opus46"></span> Sonnet 5</span>
+              <span class="legend-item"><span class="legend-dot composer25"></span> Opus 4.6</span>
+              <span class="legend-item"><span class="legend-dot sonnet5"></span> Composer 2.5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metrics-group accent-blue">
+          <h4>Epic-Calibrated Productivity Gains (% gain in time)</h4>
+
+          <!-- ZTWIM Section -->
+          <div class="prod-epic-section">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <h5 style="margin:0; color:var(--dark);">ZTWIM</h5>
+              <div class="view-toggle" id="ztwimViewToggle">
+                <button class="view-toggle-btn" data-view="table" onclick="toggleEpicView('ztwim','table')"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg></button>
+                <button class="view-toggle-btn active" data-view="chart" onclick="toggleEpicView('ztwim','chart')"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg></button>
+              </div>
+            </div>
+            <div id="ztwimTableView" style="display:none;">
+              <table class="tbl">
+                <thead><tr><th>Phase \ Model</th><th>Sonnet 5 / Opus 4.6</th><th>Composer 2.5</th></tr></thead>
+                <tbody>
+                  <tr><td>Spec Validation</td><td><span class="score high">80%</span></td><td><span class="score high">80%</span></td></tr>
+                  <tr><td>Planning report generation &amp; review</td><td><span class="score high">60%</span></td><td><span class="score high">60%</span></td></tr>
+                  <tr><td>Tasks report generation &amp; review</td><td><span class="score low">10%</span></td><td><span class="score low">10%</span></td></tr>
+                  <tr><td>Code generation &amp; review</td><td><span class="score mid">50%</span></td><td><span class="score high">60%</span></td></tr>
+                </tbody>
+              </table>
+              <p style="font-size:0.82em; color:var(--gray); margin-top:6px;">* Tasks report: negative due to too many tasks generated by Sonnet 5.</p>
+            </div>
+            <div id="ztwimChartView">
+              <div class="vchart-wrapper vchart-zero">
+                <div class="vchart-y-axis"><span>80%</span><span>60%</span><span>40%</span><span>20%</span><span>0</span><span>-20%</span><span>-40%</span></div>
+                <div class="vchart-area">
+                  <div class="vchart-gridlines"><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline" style="border-bottom:2px solid #999;"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div></div>
+                  <div class="vchart-groups">
+                    <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar bar-pos prod-model1" style="height:66.67%"><span class="vchart-bar-val">80%</span></div><div class="vchart-bar bar-pos prod-model2" style="height:66.67%"><span class="vchart-bar-val">80%</span></div></div><span class="vchart-label">Spec Valid.</span></div>
+                    <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar bar-pos prod-model1" style="height:50%"><span class="vchart-bar-val">60%</span></div><div class="vchart-bar bar-pos prod-model2" style="height:50%"><span class="vchart-bar-val">60%</span></div></div><span class="vchart-label">Planning</span></div>
+                    <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar bar-pos prod-model1" style="height:8.33%"><span class="vchart-bar-val">10%</span></div><div class="vchart-bar bar-pos prod-model2" style="height:8.33%"><span class="vchart-bar-val">10%</span></div></div><span class="vchart-label">Tasks</span></div>
+                    <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar bar-pos prod-model1" style="height:41.67%"><span class="vchart-bar-val">50%</span></div><div class="vchart-bar bar-pos prod-model2" style="height:50%"><span class="vchart-bar-val">60%</span></div></div><span class="vchart-label">Code-gen</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item"><span class="legend-dot prod-model1"></span> Sonnet 5 / Opus 4.6</span>
+                <span class="legend-item"><span class="legend-dot prod-model2"></span> Composer 2.5</span>
+              </div>
+              <p style="font-size:0.82em; color:var(--gray); margin-top:6px;">* Note: The productivity gain with tasks is minimal due to review time.</p>
+            </div>
+          </div>
+        </div>
+
+          <!-- SMC Section -->
+          <div class="prod-epic-section" style="margin-top:24px; padding-top:20px; border-top:1px solid #eef1f5;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <h5 style="margin:0; color:var(--dark);">SMC</h5>
+              <div class="view-toggle" id="smcViewToggle">
+                <button class="view-toggle-btn" data-view="table" onclick="toggleEpicView('smc','table')"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg></button>
+                <button class="view-toggle-btn active" data-view="chart" onclick="toggleEpicView('smc','chart')"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg></button>
+              </div>
+            </div>
+            <div id="smcTableView" style="display:none;">
+              <table class="tbl">
+                <thead><tr><th>Phase \ Model</th><th>Sonnet 5 / Opus 4.6</th><th>Composer 2.5</th></tr></thead>
+                <tbody>
+                  <tr><td>Spec Validation</td><td><span class="score high">70%</span></td><td><span class="score high">75%</span></td></tr>
+                  <tr><td>Planning report generation &amp; review</td><td><span class="score high">55%</span></td><td><span class="score high">60%</span></td></tr>
+                  <tr><td>Tasks report generation &amp; review</td><td><span class="score low">15%</span></td><td><span class="score low">15%</span></td></tr>
+                  <tr><td>Code generation &amp; review</td><td><span class="score mid">45%</span></td><td><span class="score high">55%</span></td></tr>
+                </tbody>
+              </table>
+              <p style="font-size:0.82em; color:var(--gray); margin-top:6px;">* Preliminary numbers &mdash; SMC has one epic run so far; will refine as more tickets land.</p>
+            </div>
+            <div id="smcChartView">
+              <div class="vchart-wrapper vchart-zero">
+                <div class="vchart-y-axis"><span>80%</span><span>60%</span><span>40%</span><span>20%</span><span>0</span><span>-20%</span><span>-40%</span></div>
+                <div class="vchart-area">
+                  <div class="vchart-gridlines"><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div><div class="vchart-gridline" style="border-bottom:2px solid #999;"></div><div class="vchart-gridline"></div><div class="vchart-gridline"></div></div>
+                  <div class="vchart-groups">
+                    <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar bar-pos prod-model1" style="height:58.33%"><span class="vchart-bar-val">70%</span></div><div class="vchart-bar bar-pos prod-model2" style="height:62.5%"><span class="vchart-bar-val">75%</span></div></div><span class="vchart-label">Spec Valid.</span></div>
+                    <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar bar-pos prod-model1" style="height:45.83%"><span class="vchart-bar-val">55%</span></div><div class="vchart-bar bar-pos prod-model2" style="height:50%"><span class="vchart-bar-val">60%</span></div></div><span class="vchart-label">Planning</span></div>
+                    <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar bar-pos prod-model1" style="height:12.5%"><span class="vchart-bar-val">15%</span></div><div class="vchart-bar bar-pos prod-model2" style="height:12.5%"><span class="vchart-bar-val">15%</span></div></div><span class="vchart-label">Tasks</span></div>
+                    <div class="vchart-group"><div class="vchart-bars"><div class="vchart-bar bar-pos prod-model1" style="height:37.5%"><span class="vchart-bar-val">45%</span></div><div class="vchart-bar bar-pos prod-model2" style="height:45.83%"><span class="vchart-bar-val">55%</span></div></div><span class="vchart-label">Code-gen</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item"><span class="legend-dot prod-model1"></span> Sonnet 5 / Opus 4.6</span>
+                <span class="legend-item"><span class="legend-dot prod-model2"></span> Composer 2.5</span>
+              </div>
+              <p style="font-size:0.82em; color:var(--gray); margin-top:6px;">* Preliminary numbers &mdash; SMC has one epic run so far; will refine as more tickets land.</p>
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Challenges and Recommendations -->
+      <div class="card-collapsible">
+        <div class="card-collapsible-header" onclick="this.closest('.card-collapsible').classList.toggle('open')">
+          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path d="M7.293 4.707a1 1 0 011.414 0L14.414 10l-5.707 5.293a1 1 0 01-1.414-1.414L11.586 10 7.293 5.879a1 1 0 010-1.172z"/></svg>
+          <div><h3>Challenges and Recommendations</h3><p class="section-sub">Key challenges encountered and recommendations for improvement</p></div>
+        </div>
+        <div class="card-collapsible-body">
+          <div class="card-collapsible-content">
+            <div class="metrics-group accent-purple" style="margin-bottom:20px;">
+              <h4 style="margin:0 0 12px;">Key Challenges</h4>
+              <ul style="margin:0; padding-left:20px; line-height:1.8; color:#2c3e50; font-size:0.92em;">
+                <li>Maturity assessment: Assessment of Harness engineering docs and evals for automated is very fuzzy and benchmarking needs multiple iterations (with different EPs) and methods (agentic docs, historical PRs, multiple rounds of testing etc.).</li>
+                <li>Alignment of agentic flow with human thoughts for ease of review and adaptation (for example, the review of <a href="https://tasks.md/" target="_blank">tasks.md</a> and code gen followed by PR should follow a modular approach instead of mass generation and one PR approach).</li>
+                <li>Mis-interpretation of Spec/contextual docs by LLMs/agents and delayed identification of issues.</li>
+                <li>Cross-repo governance and secured agentic flow.</li>
+              </ul>
+            </div>
+
+            <div class="metrics-group accent-teal" style="margin-bottom:20px;">
+              <h4 style="margin:0 0 12px;">Recommendations</h4>
+              <ul style="margin:0; padding-left:20px; line-height:1.8; color:#2c3e50; font-size:0.92em;">
+                <li>Standardization: Adaption of ai-helpers agentic docs helped standardize the semantics of harness docs across operators.</li>
+                <li>Adaptation of OpenSpec Orchestration (customized) for agentic SDLC given the flexibility for customization and native integrations as well as alignment with human reviewer thought process.</li>
+                <li>Hybrid approach to building and refining the contextualization docs using ai-helpers agentic docs and Cursor. Ai-helpers generated certain sections which were more meaningful and aided in higher efficiency.</li>
+              </ul>
+            </div>
+
+            <div class="metrics-group accent-blue">
+              <h4 style="margin:0 0 12px;">Next steps</h4>
+              <ul style="margin:0; padding-left:20px; line-height:1.8; color:#2c3e50; font-size:0.92em;">
+                <li>WIP on evaluating sandbox (Openshell) and orchestrators like Prow.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- SDLC Agentic Performance -->
+      <div id="sdlcPerformanceDashboard" class="card-collapsible">
+        <div class="card-collapsible-header" onclick="this.closest('.card-collapsible').classList.toggle('open')">
+          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor"><path d="M7.293 4.707a1 1 0 011.414 0L14.414 10l-5.707 5.293a1 1 0 01-1.414-1.414L11.586 10 7.293 5.879a1 1 0 010-1.172z"/></svg>
+          <div><h3>SDLC Agentic Performance</h3><p class="section-sub">Cross-operator agentic SDLC performance, summary KPIs, and aggregated analytics</p></div>
+        </div>
+        <div class="card-collapsible-body">
+          <div class="card-collapsible-content">
+
+            <div class="metrics-group accent-purple" style="margin-top:0; padding-top:0; border-top:none;">
+              <div class="sdlc-analytics-header">
+                <h4>Summary</h4>
+                <label class="operator-select-wrap">
+                  <span class="operator-select-label">Month</span>
+                  <select id="sdlcMonthSelect" class="operator-select" onchange="loadSDLCSummaryMonth(this.value)">
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september" selected>September</option>
+                  </select>
+                </label>
+              </div>
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Story Points</th>
+                    <th>Total Cost</th>
+                    <th>Total Tokens</th>
+                    <th>Time Saved</th>
+                  </tr>
+                </thead>
+                <tbody id="sdlcSummaryBody">
+                  <tr>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                    <td>&mdash;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Aggregation and Analytics (temporarily disabled)
+            <div class="metrics-group accent-teal" style="margin-top:28px;">
+              <div class="sdlc-analytics-header">
+                <h4>Aggregation and Analytics</h4>
+                <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+                  <div class="agg-metric-toggles" id="aggMetricToggles">
+                    <label class="agg-metric-toggle">
+                      <input type="radio" name="aggMetric" value="tokens" checked onchange="renderAggregationView()">
+                      <span class="agg-metric-pill">Tokens</span>
+                    </label>
+                    <label class="agg-metric-toggle">
+                      <input type="radio" name="aggMetric" value="cost" onchange="renderAggregationView()">
+                      <span class="agg-metric-pill">Cost</span>
+                    </label>
+                  </div>
+                  <div class="view-toggle" id="aggViewToggle">
+                    <button class="view-toggle-btn active" data-view="chart" onclick="toggleAggView('chart')">
+                      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/></svg>
+                    </button>
+                    <button class="view-toggle-btn" data-view="table" onclick="toggleAggView('table')">
+                      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zm13 3H1v3h6V4h1v3h7V4zM1 8v3h6V8H1zm7 0v3h7V8H8zm7 4H8v3h6a1 1 0 0 0 1-1v-2zM7 15v-3H1v2a1 1 0 0 0 1 1h5z"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div id="sdlcAnalyticsContent">
+                <p style="font-size:0.92em; color:#95a5a6; margin:0;">Loading cross-operator metrics&hellip;</p>
+              </div>
+            </div>
+            -->
+
+          </div>
+        </div>
+      </div>
+
+  </div>
