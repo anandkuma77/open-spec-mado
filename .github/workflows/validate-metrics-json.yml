@@ -1,0 +1,100 @@
+name: Validate Metrics JSON
+
+on:
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate required fields in metrics JSON
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for raw metrics changes
+        id: filter
+        run: |
+          CHANGED=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- 'data/open-spec-matrics/**/*.json' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "No raw metrics JSON changed — skipping validation"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Changed files:"
+            echo "$CHANGED"
+          fi
+
+      - name: Validate JSON syntax
+        if: steps.filter.outputs.skip != 'true'
+        run: |
+          EXIT_CODE=0
+
+          shopt -s globstar nullglob
+          FILES=(data/open-spec-matrics/operators/**/*.json)
+
+          if [ ${#FILES[@]} -eq 0 ]; then
+            echo "⚠️  No JSON files found in data/open-spec-matrics/operators/"
+            exit 1
+          fi
+
+          echo "Checking JSON syntax for ${#FILES[@]} file(s)"
+          echo "---"
+
+          for file in "${FILES[@]}"; do
+            echo "Checking: $file"
+            if ! ERROR=$(jq empty "$file" 2>&1); then
+              echo "  ❌ Invalid JSON syntax"
+              echo "$ERROR" | sed 's/^/    /'
+              EXIT_CODE=1
+            else
+              echo "  ✅ Valid JSON"
+            fi
+          done
+
+          echo "---"
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "❌ JSON syntax validation failed — see errors above"
+            exit $EXIT_CODE
+          fi
+
+          echo "✅ All files have valid JSON syntax"
+
+      - name: Validate required fields
+        if: steps.filter.outputs.skip != 'true'
+        run: |
+          REQUIRED_FIELDS=("jira_task_name" "jira_task_link")
+          EXIT_CODE=0
+
+          shopt -s globstar nullglob
+          FILES=(data/open-spec-matrics/operators/**/*.json)
+
+          echo "Checking required fields for ${#FILES[@]} file(s)"
+          echo "Required top-level fields: ${REQUIRED_FIELDS[*]}"
+          echo "---"
+
+          for file in "${FILES[@]}"; do
+            echo "Checking: $file"
+            ERRORS=()
+
+            for field in "${REQUIRED_FIELDS[@]}"; do
+              VALUE=$(jq -r --arg f "$field" '.[$f] // empty' "$file")
+              if [ -z "$VALUE" ]; then
+                ERRORS+=("$field")
+              fi
+            done
+
+            if [ ${#ERRORS[@]} -gt 0 ]; then
+              echo "  ❌ Missing required fields: ${ERRORS[*]}"
+              EXIT_CODE=1
+            else
+              echo "  ✅ All required fields present"
+            fi
+          done
+
+          echo "---"
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "❌ Required field validation failed — see errors above"
+          else
+            echo "✅ All files passed required field validation"
+          fi
+          exit $EXIT_CODE

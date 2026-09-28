@@ -1,0 +1,70 @@
+name: Generate Processed Metrics
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/open-spec-matrics/**'
+      - 'scripts/generate_processed_metrics.py'
+      - 'scripts/generate_sdlc_summary.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-processed-metrics-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate processed metrics from raw data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history so we can commit + push a fast-forward update.
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate processed metrics for all operators
+        run: |
+          for operator_dir in data/open-spec-matrics/operators/*/; do
+            operator=$(basename "$operator_dir")
+            echo "Processing: $operator"
+            python3 scripts/generate_processed_metrics.py \
+              --raw-dir "$operator_dir" \
+              --output "data/processed/${operator}_epics.json" \
+              --qe-output "data/processed/${operator}_qe.json"
+          done
+          python3 scripts/generate_sdlc_summary.py
+
+      - name: Upload processed metrics as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: processed-metrics
+          path: data/processed/
+
+      - name: Commit and push regenerated metrics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- data/processed/; then
+            echo "No changes to data/processed/ — nothing to commit"
+            exit 0
+          fi
+
+          git add data/processed/
+          git commit -m "chore: auto-regenerate processed metrics [skip ci]"
+
+          # Rebase onto the latest main in case other commits landed while
+          # this job was running, then push.
+          git pull --rebase origin main
+          git push origin HEAD:main
